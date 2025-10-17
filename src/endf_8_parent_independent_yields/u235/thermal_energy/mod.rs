@@ -1,4 +1,5 @@
-use uom::si::{f64::*, ratio::ratio};
+use uom::si::ratio::ratio;
+use uom::si::f64::*;
 
 use crate::endf_8_parent_independent_yields::nuclides::Nuclides;
 use Nuclides::*;
@@ -1254,7 +1255,6 @@ pub fn u235_thermal_fission_yield(nuc: Nuclides) -> Ratio {
         Lu172m => 0.000000E+00,
         Hf171 => 0.000000E+00,
         Hf172 => 0.000000E+00,
-        // these nuclides are not covered
         U235 => todo!(),
         V67 => todo!(),
         Ni79 => todo!(),
@@ -1270,6 +1270,9 @@ pub fn u235_thermal_fission_yield(nuc: Nuclides) -> Ratio {
         Sm169 => todo!(),
         Sm171 => todo!(),
         Eu171 => todo!(),
+        V68 => todo!(),
+        Tc120 => todo!(),
+        Rh125 => todo!(),
     };
 
     return Ratio::new::<ratio>(yield_float);
