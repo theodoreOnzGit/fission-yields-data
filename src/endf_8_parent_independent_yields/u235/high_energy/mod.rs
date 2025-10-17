@@ -1274,6 +1274,19 @@ pub fn u235_high_fission_yield(nuc: Nuclide) -> Ratio {
         Pr162 => todo!(),
         Pm167 => todo!(),
         Sm171 => todo!(),
+        U232 => todo!(),
+        U233 => todo!(),
+        U234 => todo!(),
+        U236 => todo!(),
+        U237 => todo!(),
+        U238 => todo!(),
+        Np237 => todo!(),
+        Np238 => todo!(),
+        Pu238 => todo!(),
+        Pu239 => todo!(),
+        Pu240 => todo!(),
+        Pu241 => todo!(),
+        Pu242 => todo!(),
     };
 
     return Ratio::new::<ratio>(yield_float);
