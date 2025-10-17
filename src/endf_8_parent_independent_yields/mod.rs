@@ -22,6 +22,18 @@ pub(crate) mod np237;
 /// np238 fission yields
 pub(crate) mod np238;
 
+// plutonium fission yields
+/// pu238 fission yields
+pub(crate) mod pu238;
+/// pu239 fission yields
+pub(crate) mod pu239;
+/// pu240 fission yields
+pub(crate) mod pu240;
+/// pu241 fission yields
+pub(crate) mod pu241;
+/// pu242 fission yields
+pub(crate) mod pu242;
+
 
 /// holds the enums for various nuclides
 pub mod nuclides;
