@@ -47,3 +47,5 @@ mod tests {
 /// provides endf 8 parent independent fission yields,
 /// data taken from ENDF/B-VIII using JANIS
 pub(crate) mod endf_8_parent_independent_yields;
+
+pub mod prelude;

@@ -4,6 +4,7 @@ use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
 use crate::endf_8_parent_independent_yields::u235::linear_linear_energy_interpolation_u235;
 
 
+#[inline]
 pub fn linear_linear_energy_interpolation(
     neutron_energy: Energy,
     fissioning_nuclide: Nuclide,
