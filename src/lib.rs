@@ -26,20 +26,6 @@
 //! For this library we use independent fission yields
 //!
 //! 
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
 
 
 #[warn(missing_docs)]
@@ -49,3 +35,6 @@ mod tests {
 pub(crate) mod endf_8_parent_independent_yields;
 
 pub mod prelude;
+
+#[cfg(test)]
+pub(crate) mod tutorials_and_tests;
