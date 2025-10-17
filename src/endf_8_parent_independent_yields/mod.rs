@@ -34,6 +34,12 @@ pub(crate) mod pu241;
 /// pu242 fission yields
 pub(crate) mod pu242;
 
+// protactinium fission yields 
+pub(crate) mod pa231;
+
+// thorium fission yields 
+pub (crate) mod th232;
+
 
 /// holds the enums for various nuclides
 pub mod nuclides;
