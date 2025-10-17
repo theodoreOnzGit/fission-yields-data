@@ -42,6 +42,7 @@ mod tests {
 }
 
 
+#[warn(missing_docs)]
 
 /// provides endf 8 parent independent fission yields,
 /// data taken from ENDF/B-VIII using JANIS
