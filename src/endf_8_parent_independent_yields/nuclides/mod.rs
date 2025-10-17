@@ -1,7 +1,8 @@
 /// Provides an enum of all nuclides within the 
 /// library
 #[allow(non_snake_case)]
-pub enum Nuclides {
+#[derive(Debug,Clone,Copy)]
+pub enum Nuclide {
     U235,
     V66,
     V67,

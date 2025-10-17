@@ -1,11 +1,11 @@
 use uom::si::ratio::ratio;
 use uom::si::f64::*;
 
-use crate::endf_8_parent_independent_yields::nuclides::Nuclides;
-use Nuclides::*;
+use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
+use Nuclide::*;
 
 
-pub fn u235_thermal_fission_yield(nuc: Nuclides) -> Ratio {
+pub fn u235_thermal_fission_yield(nuc: Nuclide) -> Ratio {
 
     let yield_float: f64 = match nuc {
         V66 => 2.050320E-19,
