@@ -22,5 +22,4 @@ pub fn linear_linear_energy_interpolation(
         _ => todo!("fissioning nuclide interpolation not implemented"),
     };
 
-    todo!();
 }
