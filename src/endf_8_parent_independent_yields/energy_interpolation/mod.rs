@@ -14,10 +14,10 @@ pub fn linear_linear_energy_interpolation(
 
     match fissioning_nuclide {
         Nuclide::U235 => {
-            linear_linear_energy_interpolation_u235(neutron_energy, fission_product_nuclide)
+            return linear_linear_energy_interpolation_u235(neutron_energy, fission_product_nuclide);
         },
         Nuclide::U233 => {
-            linear_linear_energy_interpolation_u233(neutron_energy, fission_product_nuclide)
+            return linear_linear_energy_interpolation_u233(neutron_energy, fission_product_nuclide);
         },
         _ => todo!("fissioning nuclide interpolation not implemented"),
     };

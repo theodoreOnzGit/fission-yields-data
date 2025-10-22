@@ -22,3 +22,11 @@ fn example_1(){
     assert_eq!(reference_yield,test_yield);
 
 }
+
+/// now, in this example, we wish to generate the fission yield 
+/// mass distributions
+/// 
+#[test]
+fn example_2(){
+
+}
