@@ -5,3 +5,7 @@ edition = "2024"
 
 [dependencies]
 uom = "0.37.0"
+
+[dev-dependencies]
+approx = "0.5.1"
+

@@ -1,3 +1,6 @@
+use crate::prelude::fission_yield;
+use uom::si::{f64::*, ratio::ratio};
+
 /// Provides an enum of all nuclides within the 
 /// library
 #[allow(non_snake_case)]
@@ -1281,5 +1284,93 @@ pub enum Nuclide {
     Lu172m,
     Hf171,
     Hf172,
+
+}
+
+pub mod mass_yields;
+
+impl Nuclide {
+    /// generates a mass distribution vector for said nuclide 
+    ///
+    /// the vector will be in a tuple form, 
+    pub fn get_mass_distribution_vector(&self, 
+        neutron_energy: Energy) -> Vec<(u32,f64)> {
+
+        // first we allocate a vector 
+        let mut mass_distribution_vector: Vec<(u32,f64)> = vec![];
+
+        // start from A=66
+        {
+            let mut distribution_yield_66: f64 = 0.0;
+            // Z=23 (vanadium)
+            distribution_yield_66 += 
+                fission_yield(
+                    *self, 
+                    Nuclide::V66, 
+                    neutron_energy).get::<ratio>();
+            // Z=24 (Chromium)
+            distribution_yield_66 += 
+                fission_yield(
+                    *self, 
+                    Nuclide::Cr66, 
+                    neutron_energy).get::<ratio>();
+            // Z=25 (Manganese)
+            distribution_yield_66 += 
+                fission_yield(
+                    *self, 
+                    Nuclide::Mn66, 
+                    neutron_energy).get::<ratio>();
+            // Z=26 Iron
+            distribution_yield_66 += 
+                fission_yield(
+                    *self, 
+                    Nuclide::Fe66, 
+                    neutron_energy).get::<ratio>();
+
+            // Z=27 Cobalt
+            distribution_yield_66 += 
+                fission_yield(
+                    *self, 
+                    Nuclide::Co66, 
+                    neutron_energy).get::<ratio>();
+            // Z=28 Nickel
+            distribution_yield_66 += 
+                fission_yield(
+                    *self, 
+                    Nuclide::Ni66, 
+                    neutron_energy).get::<ratio>();
+            // Z=29 Copper
+            distribution_yield_66 += 
+                fission_yield(
+                    *self, 
+                    Nuclide::Cu66, 
+                    neutron_energy).get::<ratio>();
+            // Z=30 Zinc
+            distribution_yield_66 += 
+                fission_yield(
+                    *self, 
+                    Nuclide::Zn66, 
+                    neutron_energy).get::<ratio>();
+            // Z=31 Gallium
+            distribution_yield_66 += 
+                fission_yield(
+                    *self, 
+                    Nuclide::Ga66, 
+                    neutron_energy).get::<ratio>();
+            // Z=32 Germanium
+            distribution_yield_66 += 
+                fission_yield(
+                    *self, 
+                    Nuclide::Ge66, 
+                    neutron_energy).get::<ratio>();
+            // Z=33 Arsenic (none)
+
+            mass_distribution_vector.push((66,distribution_yield_66));
+
+        }
+
+
+        return mass_distribution_vector;
+    }
 
 }

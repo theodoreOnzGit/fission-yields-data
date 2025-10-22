@@ -2,7 +2,6 @@ use uom::si::energy::electronvolt;
 use uom::si::f64::Energy;
 use uom::si::ratio::ratio;
 
-use crate::endf_8_parent_independent_yields::u233::thermal_energy::u233_thermal_fission_yield;
 use crate::prelude::fission_yield;
 use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
 
@@ -27,7 +26,36 @@ fn example_1(){
 /// now, in this example, we wish to generate the fission yield 
 /// mass distributions
 /// 
+/// we can do the following done simply for A=66
+/// for U233, for U235 also this works
 #[test]
 fn example_2(){
 
+    let uranium_233 = Nuclide::U233;
+    let neutron_energy = Energy::new::<electronvolt>(0.0253);
+
+    let test_yield = uranium_233.get_mass_yield_66(neutron_energy);
+
+    let reference_yield = 2.502551159E-7 *1e-2;
+
+
+    // if coded correctly, the test yield should equal the reference yield 
+    approx::assert_relative_eq!(
+        reference_yield,
+        test_yield,
+        max_relative=1e-9);
+
+    let uranium_235 = Nuclide::U235;
+    let neutron_energy = Energy::new::<electronvolt>(0.0253);
+
+    let test_yield = uranium_235.get_mass_yield_66(neutron_energy);
+
+    let reference_yield = 7.221154783E-8 *1e-2;
+
+
+    // if coded correctly, the test yield should equal the reference yield 
+    approx::assert_relative_eq!(
+        reference_yield,
+        test_yield,
+        max_relative=1e-9);
 }
