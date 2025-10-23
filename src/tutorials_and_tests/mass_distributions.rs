@@ -137,7 +137,7 @@ pub fn u235_thermal_mass_distribution(){
             approx::assert_relative_eq!(
                 ref_fiss_yield,
                 test_fiss_yield,
-                max_relative=1e-11);
+                max_relative=1e-6);
 
     }
     

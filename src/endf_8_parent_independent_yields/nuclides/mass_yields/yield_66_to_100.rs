@@ -665,6 +665,11 @@ impl Nuclide {
                 *self, 
                 Nuclide::Ga74, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_74 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ga74m, 
+                neutron_energy).get::<ratio>();
         // Z=32 Germanium
         distribution_yield_74 += 
             fission_yield(
@@ -676,6 +681,11 @@ impl Nuclide {
             fission_yield(
                 *self, 
                 Nuclide::As74, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_74 += 
+            fission_yield(
+                *self, 
+                Nuclide::As74m, 
                 neutron_energy).get::<ratio>();
         // Z=34 Selenium 
         distribution_yield_74 += 
@@ -739,6 +749,11 @@ impl Nuclide {
                 *self, 
                 Nuclide::Ge75, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_75 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ge75m, 
+                neutron_energy).get::<ratio>();
         // Z=33 Arsenic 
         distribution_yield_75 += 
             fission_yield(
@@ -763,6 +778,7 @@ impl Nuclide {
         //        *self, 
         //        Nuclide::Kr75, 
         //        neutron_energy).get::<ratio>();
+
 
         return distribution_yield_75;
 
@@ -893,6 +909,11 @@ impl Nuclide {
                 *self, 
                 Nuclide::Ge77, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_77 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ge77m, 
+                neutron_energy).get::<ratio>();
         // Z=33 Arsenic 
         distribution_yield_77 += 
             fission_yield(
@@ -905,11 +926,21 @@ impl Nuclide {
                 *self, 
                 Nuclide::Se77, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_77 += 
+            fission_yield(
+                *self, 
+                Nuclide::Se77m, 
+                neutron_energy).get::<ratio>();
         // Z=35 Bromine 
         distribution_yield_77 += 
             fission_yield(
                 *self, 
                 Nuclide::Br77, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_77 += 
+            fission_yield(
+                *self, 
+                Nuclide::Br77m, 
                 neutron_energy).get::<ratio>();
         // Z=36 Krypton 
         distribution_yield_77 += 
@@ -1046,6 +1077,11 @@ impl Nuclide {
                 *self, 
                 Nuclide::Ge79, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_79 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ge79m, 
+                neutron_energy).get::<ratio>();
         // Z=33 Arsenic 
         distribution_yield_79 += 
             fission_yield(
@@ -1058,17 +1094,32 @@ impl Nuclide {
                 *self, 
                 Nuclide::Se79, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_79 += 
+            fission_yield(
+                *self, 
+                Nuclide::Se79m, 
+                neutron_energy).get::<ratio>();
         // Z=35 Bromine 
         distribution_yield_79 += 
             fission_yield(
                 *self, 
                 Nuclide::Br79, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_79 += 
+            fission_yield(
+                *self, 
+                Nuclide::Br79m, 
+                neutron_energy).get::<ratio>();
         // Z=36 Krypton 
         distribution_yield_79 += 
             fission_yield(
                 *self, 
                 Nuclide::Kr79, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_79 += 
+            fission_yield(
+                *self, 
+                Nuclide::Kr79m, 
                 neutron_energy).get::<ratio>();
         // Z=37 Rubidium 
         distribution_yield_79 += 
