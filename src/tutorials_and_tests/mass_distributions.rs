@@ -1,9 +1,13 @@
+use uom::si::{energy::electronvolt, f64::Energy};
+
+use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
+
 /// test for u235 thermal neutron spectrum mass distribution
 /// from independent fission yields
 #[test]
 pub fn u235_thermal_mass_distribution(){
 
-    let u235_thermal_fission_distribution: Vec<(u32,f64)> = vec![
+    let ref_u235_thermal_fission_distribution: Vec<(u32,f64)> = vec![
         (66 , 7.221154783E-8 * 1e-2 ),
         (67 , 3.60580594E-7 * 1e-2 ),
         (68 , 7.15773452E-7 * 1e-2 ),
@@ -112,4 +116,28 @@ pub fn u235_thermal_mass_distribution(){
         (171 , 2.3470269E-9 * 1e-2 ),
         (172 , 7.6867481E-10 * 1e-2 ),
         ];
+
+    let neutron_energy = Energy::new::<electronvolt>(0.0253);
+    let test_u235_fission_distribution = 
+        Nuclide::U235.get_mass_yield_vector(neutron_energy);
+
+    // this part cycles through the whole yield curve, 
+    // testing to see if the yields add up
+    for (idx, (ref_mass_number,ref_fiss_yield)) in 
+        ref_u235_thermal_fission_distribution.clone().into_iter().enumerate() {
+
+            let (test_mass_number, test_fiss_yield) = 
+                test_u235_fission_distribution[idx];
+
+            assert_eq!(ref_mass_number,test_mass_number);
+            dbg!(&(ref_mass_number,ref_fiss_yield));
+
+            approx::assert_relative_eq!(
+                ref_fiss_yield,
+                test_fiss_yield,
+                max_relative=1e-9);
+
+    }
+    
+
 }
