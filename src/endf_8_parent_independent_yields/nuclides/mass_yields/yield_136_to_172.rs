@@ -68,6 +68,11 @@ impl Nuclide {
                 *self, 
                 Nuclide::I136, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_136 += 
+            fission_yield(
+                *self, 
+                Nuclide::I136m, 
+                neutron_energy).get::<ratio>();
         // Z=54 Xenon
         distribution_yield_136 += 
             fission_yield(
@@ -80,11 +85,21 @@ impl Nuclide {
                 *self, 
                 Nuclide::Cs136, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_136 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cs136m, 
+                neutron_energy).get::<ratio>();
         // Z=56 Barium
         distribution_yield_136 += 
             fission_yield(
                 *self, 
                 Nuclide::Ba136, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_136 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ba136m, 
                 neutron_energy).get::<ratio>();
         // Z=57 Lathanium
         //distribution_yield_136 += 
