@@ -1773,6 +1773,11 @@ impl Nuclide {
                 *self, 
                 Nuclide::Ag116, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_116 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag116m, 
+                neutron_energy).get::<ratio>();
         // Z=48 Cadmium
         distribution_yield_116 += 
             fission_yield(
@@ -1784,6 +1789,11 @@ impl Nuclide {
             fission_yield(
                 *self, 
                 Nuclide::In116, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_116 += 
+            fission_yield(
+                *self, 
+                Nuclide::In116m, 
                 neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_116 += 
@@ -1881,11 +1891,21 @@ impl Nuclide {
                 *self, 
                 Nuclide::Ag117, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_117 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag117m, 
+                neutron_energy).get::<ratio>();
         // Z=48 Cadmium
         distribution_yield_117 += 
             fission_yield(
                 *self, 
                 Nuclide::Cd117, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_117 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd117m, 
                 neutron_energy).get::<ratio>();
         // Z=49 Indium 
         distribution_yield_117 += 
@@ -1893,11 +1913,21 @@ impl Nuclide {
                 *self, 
                 Nuclide::In117, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_117 += 
+            fission_yield(
+                *self, 
+                Nuclide::In117m, 
+                neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_117 += 
             fission_yield(
                 *self, 
                 Nuclide::Sn117, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_117 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn117m, 
                 neutron_energy).get::<ratio>();
         // Z=51 Antimony
         distribution_yield_117 += 
@@ -1984,6 +2014,11 @@ impl Nuclide {
                 *self, 
                 Nuclide::Ag118, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_118 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag118m, 
+                neutron_energy).get::<ratio>();
         // Z=48 Cadmium
         distribution_yield_118 += 
             fission_yield(
@@ -1995,6 +2030,16 @@ impl Nuclide {
             fission_yield(
                 *self, 
                 Nuclide::In118, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_118 += 
+            fission_yield(
+                *self, 
+                Nuclide::In118m, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_118 += 
+            fission_yield(
+                *self, 
+                Nuclide::In118n, 
                 neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_118 += 
@@ -2008,12 +2053,18 @@ impl Nuclide {
                 *self, 
                 Nuclide::Sb118, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_118 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb118m, 
+                neutron_energy).get::<ratio>();
         // Z=52 Tellurium
         distribution_yield_118 += 
             fission_yield(
                 *self, 
                 Nuclide::Te118, 
                 neutron_energy).get::<ratio>();
+
         // Z=53 Iodine
         //distribution_yield_118 += 
         //    fission_yield(
@@ -2093,17 +2144,32 @@ impl Nuclide {
                 *self, 
                 Nuclide::Cd119, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_119 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd119m, 
+                neutron_energy).get::<ratio>();
         // Z=49 Indium 
         distribution_yield_119 += 
             fission_yield(
                 *self, 
                 Nuclide::In119, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_119 += 
+            fission_yield(
+                *self, 
+                Nuclide::In119m, 
+                neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_119 += 
             fission_yield(
                 *self, 
                 Nuclide::Sn119, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_119 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn119m, 
                 neutron_energy).get::<ratio>();
         // Z=51 Antimony
         distribution_yield_119 += 
@@ -2190,6 +2256,11 @@ impl Nuclide {
                 *self, 
                 Nuclide::Ag120, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_120 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag120m, 
+                neutron_energy).get::<ratio>();
         // Z=48 Cadmium
         distribution_yield_120 += 
             fission_yield(
@@ -2202,6 +2273,16 @@ impl Nuclide {
                 *self, 
                 Nuclide::In120, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_120 += 
+            fission_yield(
+                *self, 
+                Nuclide::In120m, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_120 += 
+            fission_yield(
+                *self, 
+                Nuclide::In120n, 
+                neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_120 += 
             fission_yield(
@@ -2213,6 +2294,11 @@ impl Nuclide {
             fission_yield(
                 *self, 
                 Nuclide::Sb120, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_120 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb120m, 
                 neutron_energy).get::<ratio>();
         // Z=52 Tellurium
         distribution_yield_120 += 
@@ -2294,17 +2380,32 @@ impl Nuclide {
                 *self, 
                 Nuclide::Cd121, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_121 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd121m, 
+                neutron_energy).get::<ratio>();
         // Z=49 Indium 
         distribution_yield_121 += 
             fission_yield(
                 *self, 
                 Nuclide::In121, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_121 += 
+            fission_yield(
+                *self, 
+                Nuclide::In121m, 
+                neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_121 += 
             fission_yield(
                 *self, 
                 Nuclide::Sn121, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_121 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn121m, 
                 neutron_energy).get::<ratio>();
         // Z=51 Antimony
         distribution_yield_121 += 
@@ -2317,6 +2418,11 @@ impl Nuclide {
             fission_yield(
                 *self, 
                 Nuclide::Te121, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_121 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te121m, 
                 neutron_energy).get::<ratio>();
         // Z=53 Iodine
         distribution_yield_121 += 
@@ -2392,6 +2498,11 @@ impl Nuclide {
                 *self, 
                 Nuclide::Ag122, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_122 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag122m, 
+                neutron_energy).get::<ratio>();
         // Z=48 Cadmium
         distribution_yield_122 += 
             fission_yield(
@@ -2404,6 +2515,16 @@ impl Nuclide {
                 *self, 
                 Nuclide::In122, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_122 += 
+            fission_yield(
+                *self, 
+                Nuclide::In122m, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_122 += 
+            fission_yield(
+                *self, 
+                Nuclide::In122n, 
+                neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_122 += 
             fission_yield(
@@ -2415,6 +2536,11 @@ impl Nuclide {
             fission_yield(
                 *self, 
                 Nuclide::Sb122, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_122 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb122m, 
                 neutron_energy).get::<ratio>();
         // Z=52 Tellurium
         distribution_yield_122 += 
