@@ -4,6 +4,15 @@ use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
 
 
 /// contains functions for masses 66 to 100
+///
+/// note that for metastable isotopes, eg. Tc99m as opposed to Tc99,
+/// their yields are different, there is a difference.
+///
+/// However, where it is not so important to differentiate the 
+/// metastable states from the normal counterpart, eg. Nb104, and Nb104m,
+/// the ENDF 8 library just has equal yields for both 
+/// this happens for many metastable isotopes,
+/// eg Nb102 and Nb102m
 pub mod yield_66_to_100;
 
 /// contains functions for masses 101 to 135
