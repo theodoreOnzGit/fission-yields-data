@@ -2379,6 +2379,1286 @@ impl Nuclide {
 
         return distribution_yield_123;
     }
+    /// gets mass yield for A=124
+    pub fn get_mass_yield_124(&self, 
+        neutron_energy: Energy) -> f64 {
+
+        let mut distribution_yield_124: f64 = 0.0;
+        // Z=23 (vanadium) -- none
+        // Z=24 (Chromium) -- none
+        // Z=25 (Manganese) -- none
+        // Z=26 (Iron) -- none
+        // Z=27 (Cobalt) -- none
+        // Z=28 (Nickel) -- none
+        // Z=29 (Copper) -- none
+        // Z=30 (Zinc) -- none
+        // Z=31 (Gallium) -- none
+        // Z=32 (Germanium) -- none
+        // Z=33 (Arsenic) -- none
+        // Z=34 (Selenium) -- none
+        // Z=35 (Bromine) -- none
+        // Z=36 (Krypton) -- none
+        // Z=37 (Rubidium) -- none
+        // Z=38 (Strontium) -- none
+        // Z=39 (Yttrium) -- none
+        // Z=40 (Zirconium) -- none
+        // Z=41 (Niobium) -- none
+        // Z=42 (Molybdenum) -- none
+        // Z=43 (Technetium) -- none
+        // Z=44 (Ruthenium) -- none
+
+        // Z=45 Rhodium
+        distribution_yield_124 += 
+            fission_yield(
+                *self, 
+                Nuclide::Rh124, 
+                neutron_energy).get::<ratio>();
+        // Z=46 Paladium
+        distribution_yield_124 += 
+            fission_yield(
+                *self, 
+                Nuclide::Pd124, 
+                neutron_energy).get::<ratio>();
+        // Z=47 Silver
+        distribution_yield_124 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag124, 
+                neutron_energy).get::<ratio>();
+        // Z=48 Cadmium
+        distribution_yield_124 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd124, 
+                neutron_energy).get::<ratio>();
+        // Z=49 Indium 
+        distribution_yield_124 += 
+            fission_yield(
+                *self, 
+                Nuclide::In124, 
+                neutron_energy).get::<ratio>();
+        // Z=50 Tin
+        distribution_yield_124 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn124, 
+                neutron_energy).get::<ratio>();
+        // Z=51 Antimony
+        distribution_yield_124 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb124, 
+                neutron_energy).get::<ratio>();
+        // Z=52 Tellurium
+        distribution_yield_124 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te124, 
+                neutron_energy).get::<ratio>();
+        // Z=53 Iodine
+        //distribution_yield_124 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::I124, 
+        //        neutron_energy).get::<ratio>();
+        // Z=54 Xe
+        distribution_yield_124 += 
+            fission_yield(
+                *self, 
+                Nuclide::Xe124, 
+                neutron_energy).get::<ratio>();
+        // Z=55 Cs
+        //distribution_yield_124 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Cs124, 
+        //        neutron_energy).get::<ratio>();
+        // Z=56 Ba
+        //distribution_yield_124 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Ba124, 
+        //        neutron_energy).get::<ratio>();
+
+
+
+        return distribution_yield_124;
+    }
+    /// gets mass yield for A=125
+    pub fn get_mass_yield_125(&self, 
+        neutron_energy: Energy) -> f64 {
+
+        let mut distribution_yield_125: f64 = 0.0;
+        // Z=23 (vanadium) -- none
+        // Z=24 (Chromium) -- none
+        // Z=25 (Manganese) -- none
+        // Z=26 (Iron) -- none
+        // Z=27 (Cobalt) -- none
+        // Z=28 (Nickel) -- none
+        // Z=29 (Copper) -- none
+        // Z=30 (Zinc) -- none
+        // Z=31 (Gallium) -- none
+        // Z=32 (Germanium) -- none
+        // Z=33 (Arsenic) -- none
+        // Z=34 (Selenium) -- none
+        // Z=35 (Bromine) -- none
+        // Z=36 (Krypton) -- none
+        // Z=37 (Rubidium) -- none
+        // Z=38 (Strontium) -- none
+        // Z=39 (Yttrium) -- none
+        // Z=40 (Zirconium) -- none
+        // Z=41 (Niobium) -- none
+        // Z=42 (Molybdenum) -- none
+        // Z=43 (Technetium) -- none
+        // Z=44 (Ruthenium) -- none
+
+        // Z=45 Rhodium
+        distribution_yield_125 += 
+            fission_yield(
+                *self, 
+                Nuclide::Rh125, 
+                neutron_energy).get::<ratio>();
+        // Z=46 Paladium
+        distribution_yield_125 += 
+            fission_yield(
+                *self, 
+                Nuclide::Pd125, 
+                neutron_energy).get::<ratio>();
+        // Z=47 Silver
+        distribution_yield_125 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag125, 
+                neutron_energy).get::<ratio>();
+        // Z=48 Cadmium
+        distribution_yield_125 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd125, 
+                neutron_energy).get::<ratio>();
+        // Z=49 Indium 
+        distribution_yield_125 += 
+            fission_yield(
+                *self, 
+                Nuclide::In125, 
+                neutron_energy).get::<ratio>();
+        // Z=50 Tin
+        distribution_yield_125 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn125, 
+                neutron_energy).get::<ratio>();
+        // Z=51 Antimony
+        distribution_yield_125 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb125, 
+                neutron_energy).get::<ratio>();
+        // Z=52 Tellurium
+        distribution_yield_125 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te125, 
+                neutron_energy).get::<ratio>();
+        // Z=53 Iodine
+        distribution_yield_125 += 
+            fission_yield(
+                *self, 
+                Nuclide::I125, 
+                neutron_energy).get::<ratio>();
+        // Z=54 Xe
+        distribution_yield_125 += 
+            fission_yield(
+                *self, 
+                Nuclide::Xe125, 
+                neutron_energy).get::<ratio>();
+        // Z=55 Cs
+        //distribution_yield_125 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Cs125, 
+        //        neutron_energy).get::<ratio>();
+        // Z=56 Ba
+        //distribution_yield_125 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Ba125, 
+        //        neutron_energy).get::<ratio>();
+
+
+
+        return distribution_yield_125;
+    }
+    /// gets mass yield for A=126
+    pub fn get_mass_yield_126(&self, 
+        neutron_energy: Energy) -> f64 {
+
+        let mut distribution_yield_126: f64 = 0.0;
+        // Z=23 (vanadium) -- none
+        // Z=24 (Chromium) -- none
+        // Z=25 (Manganese) -- none
+        // Z=26 (Iron) -- none
+        // Z=27 (Cobalt) -- none
+        // Z=28 (Nickel) -- none
+        // Z=29 (Copper) -- none
+        // Z=30 (Zinc) -- none
+        // Z=31 (Gallium) -- none
+        // Z=32 (Germanium) -- none
+        // Z=33 (Arsenic) -- none
+        // Z=34 (Selenium) -- none
+        // Z=35 (Bromine) -- none
+        // Z=36 (Krypton) -- none
+        // Z=37 (Rubidium) -- none
+        // Z=38 (Strontium) -- none
+        // Z=39 (Yttrium) -- none
+        // Z=40 (Zirconium) -- none
+        // Z=41 (Niobium) -- none
+        // Z=42 (Molybdenum) -- none
+        // Z=43 (Technetium) -- none
+        // Z=44 (Ruthenium) -- none
+        // Z=45 (Rhodium) -- none
+        // Z=46 Paladium
+        distribution_yield_126 += 
+            fission_yield(
+                *self, 
+                Nuclide::Pd126, 
+                neutron_energy).get::<ratio>();
+        // Z=47 Silver
+        distribution_yield_126 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag126, 
+                neutron_energy).get::<ratio>();
+        // Z=48 Cadmium
+        distribution_yield_126 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd126, 
+                neutron_energy).get::<ratio>();
+        // Z=49 Indium 
+        distribution_yield_126 += 
+            fission_yield(
+                *self, 
+                Nuclide::In126, 
+                neutron_energy).get::<ratio>();
+        // Z=50 Tin
+        distribution_yield_126 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn126, 
+                neutron_energy).get::<ratio>();
+        // Z=51 Antimony
+        distribution_yield_126 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb126, 
+                neutron_energy).get::<ratio>();
+        // Z=52 Tellurium
+        distribution_yield_126 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te126, 
+                neutron_energy).get::<ratio>();
+        // Z=53 Iodine
+        distribution_yield_126 += 
+            fission_yield(
+                *self, 
+                Nuclide::I126, 
+                neutron_energy).get::<ratio>();
+        // Z=54 Xe
+        distribution_yield_126 += 
+            fission_yield(
+                *self, 
+                Nuclide::Xe126, 
+                neutron_energy).get::<ratio>();
+        // Z=55 Cs
+        //distribution_yield_126 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Cs126, 
+        //        neutron_energy).get::<ratio>();
+        // Z=56 Ba
+        //distribution_yield_126 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Ba126, 
+        //        neutron_energy).get::<ratio>();
+
+
+
+        return distribution_yield_126;
+    }
+    /// gets mass yield for A=127
+    pub fn get_mass_yield_127(&self, 
+        neutron_energy: Energy) -> f64 {
+
+        let mut distribution_yield_127: f64 = 0.0;
+        // Z=23 (vanadium) -- none
+        // Z=24 (Chromium) -- none
+        // Z=25 (Manganese) -- none
+        // Z=26 (Iron) -- none
+        // Z=27 (Cobalt) -- none
+        // Z=28 (Nickel) -- none
+        // Z=29 (Copper) -- none
+        // Z=30 (Zinc) -- none
+        // Z=31 (Gallium) -- none
+        // Z=32 (Germanium) -- none
+        // Z=33 (Arsenic) -- none
+        // Z=34 (Selenium) -- none
+        // Z=35 (Bromine) -- none
+        // Z=36 (Krypton) -- none
+        // Z=37 (Rubidium) -- none
+        // Z=38 (Strontium) -- none
+        // Z=39 (Yttrium) -- none
+        // Z=40 (Zirconium) -- none
+        // Z=41 (Niobium) -- none
+        // Z=42 (Molybdenum) -- none
+        // Z=43 (Technetium) -- none
+        // Z=44 (Ruthenium) -- none
+        // Z=45 (Rhodium) -- none
+        // Z=46 Paladium
+        distribution_yield_127 += 
+            fission_yield(
+                *self, 
+                Nuclide::Pd127, 
+                neutron_energy).get::<ratio>();
+        // Z=47 Silver
+        distribution_yield_127 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag127, 
+                neutron_energy).get::<ratio>();
+        // Z=48 Cadmium
+        distribution_yield_127 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd127, 
+                neutron_energy).get::<ratio>();
+        // Z=49 Indium 
+        distribution_yield_127 += 
+            fission_yield(
+                *self, 
+                Nuclide::In127, 
+                neutron_energy).get::<ratio>();
+        // Z=50 Tin
+        distribution_yield_127 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn127, 
+                neutron_energy).get::<ratio>();
+        // Z=51 Antimony
+        distribution_yield_127 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb127, 
+                neutron_energy).get::<ratio>();
+        // Z=52 Tellurium
+        distribution_yield_127 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te127, 
+                neutron_energy).get::<ratio>();
+        // Z=53 Iodine
+        distribution_yield_127 += 
+            fission_yield(
+                *self, 
+                Nuclide::I127, 
+                neutron_energy).get::<ratio>();
+        // Z=54 Xenon
+        distribution_yield_127 += 
+            fission_yield(
+                *self, 
+                Nuclide::Xe127, 
+                neutron_energy).get::<ratio>();
+        // Z=55 Cesium
+        distribution_yield_127 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cs127, 
+                neutron_energy).get::<ratio>();
+        // Z=56 Barium
+        //distribution_yield_127 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Ba127, 
+        //        neutron_energy).get::<ratio>();
+        // Z=57 Lathanium
+        //distribution_yield_127 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::La127, 
+        //        neutron_energy).get::<ratio>();
+
+
+
+        return distribution_yield_127;
+    }
+    /// gets mass yield for A=128
+    pub fn get_mass_yield_128(&self, 
+        neutron_energy: Energy) -> f64 {
+
+        let mut distribution_yield_128: f64 = 0.0;
+        // Z=23 (vanadium) -- none
+        // Z=24 (Chromium) -- none
+        // Z=25 (Manganese) -- none
+        // Z=26 (Iron) -- none
+        // Z=27 (Cobalt) -- none
+        // Z=28 (Nickel) -- none
+        // Z=29 (Copper) -- none
+        // Z=30 (Zinc) -- none
+        // Z=31 (Gallium) -- none
+        // Z=32 (Germanium) -- none
+        // Z=33 (Arsenic) -- none
+        // Z=34 (Selenium) -- none
+        // Z=35 (Bromine) -- none
+        // Z=36 (Krypton) -- none
+        // Z=37 (Rubidium) -- none
+        // Z=38 (Strontium) -- none
+        // Z=39 (Yttrium) -- none
+        // Z=40 (Zirconium) -- none
+        // Z=41 (Niobium) -- none
+        // Z=42 (Molybdenum) -- none
+        // Z=43 (Technetium) -- none
+        // Z=44 (Ruthenium) -- none
+        // Z=45 (Rhodium) -- none
+        // Z=46 Paladium
+        distribution_yield_128 += 
+            fission_yield(
+                *self, 
+                Nuclide::Pd128, 
+                neutron_energy).get::<ratio>();
+        // Z=47 Silver
+        distribution_yield_128 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag128, 
+                neutron_energy).get::<ratio>();
+        // Z=48 Cadmium
+        distribution_yield_128 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd128, 
+                neutron_energy).get::<ratio>();
+        // Z=49 Indium 
+        distribution_yield_128 += 
+            fission_yield(
+                *self, 
+                Nuclide::In128, 
+                neutron_energy).get::<ratio>();
+        // Z=50 Tin
+        distribution_yield_128 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn128, 
+                neutron_energy).get::<ratio>();
+        // Z=51 Antimony
+        distribution_yield_128 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb128, 
+                neutron_energy).get::<ratio>();
+        // Z=52 Tellurium
+        distribution_yield_128 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te128, 
+                neutron_energy).get::<ratio>();
+        // Z=53 Iodine
+        distribution_yield_128 += 
+            fission_yield(
+                *self, 
+                Nuclide::I128, 
+                neutron_energy).get::<ratio>();
+        // Z=54 Xenon
+        distribution_yield_128 += 
+            fission_yield(
+                *self, 
+                Nuclide::Xe128, 
+                neutron_energy).get::<ratio>();
+        // Z=55 Cesium
+        //distribution_yield_128 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Cs128, 
+        //        neutron_energy).get::<ratio>();
+        // Z=56 Barium
+        //distribution_yield_128 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Ba128, 
+        //        neutron_energy).get::<ratio>();
+        // Z=57 Lathanium
+        //distribution_yield_128 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::La128, 
+        //        neutron_energy).get::<ratio>();
+
+
+
+        return distribution_yield_128;
+    }
+    /// gets mass yield for A=129
+    pub fn get_mass_yield_129(&self, 
+        neutron_energy: Energy) -> f64 {
+
+        let mut distribution_yield_129: f64 = 0.0;
+        // Z=23 (vanadium) -- none
+        // Z=24 (Chromium) -- none
+        // Z=25 (Manganese) -- none
+        // Z=26 (Iron) -- none
+        // Z=27 (Cobalt) -- none
+        // Z=28 (Nickel) -- none
+        // Z=29 (Copper) -- none
+        // Z=30 (Zinc) -- none
+        // Z=31 (Gallium) -- none
+        // Z=32 (Germanium) -- none
+        // Z=33 (Arsenic) -- none
+        // Z=34 (Selenium) -- none
+        // Z=35 (Bromine) -- none
+        // Z=36 (Krypton) -- none
+        // Z=37 (Rubidium) -- none
+        // Z=38 (Strontium) -- none
+        // Z=39 (Yttrium) -- none
+        // Z=40 (Zirconium) -- none
+        // Z=41 (Niobium) -- none
+        // Z=42 (Molybdenum) -- none
+        // Z=43 (Technetium) -- none
+        // Z=44 (Ruthenium) -- none
+        // Z=45 (Rhodium) -- none
+        // Z=46 Paladium
+        distribution_yield_129 += 
+            fission_yield(
+                *self, 
+                Nuclide::Pd129, 
+                neutron_energy).get::<ratio>();
+        // Z=47 Silver
+        distribution_yield_129 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag129, 
+                neutron_energy).get::<ratio>();
+        // Z=48 Cadmium
+        distribution_yield_129 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd129, 
+                neutron_energy).get::<ratio>();
+        // Z=49 Indium 
+        distribution_yield_129 += 
+            fission_yield(
+                *self, 
+                Nuclide::In129, 
+                neutron_energy).get::<ratio>();
+        // Z=50 Tin
+        distribution_yield_129 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn129, 
+                neutron_energy).get::<ratio>();
+        // Z=51 Antimony
+        distribution_yield_129 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb129, 
+                neutron_energy).get::<ratio>();
+        // Z=52 Tellurium
+        distribution_yield_129 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te129, 
+                neutron_energy).get::<ratio>();
+        // Z=53 Iodine
+        distribution_yield_129 += 
+            fission_yield(
+                *self, 
+                Nuclide::I129, 
+                neutron_energy).get::<ratio>();
+        // Z=54 Xenon
+        distribution_yield_129 += 
+            fission_yield(
+                *self, 
+                Nuclide::Xe129, 
+                neutron_energy).get::<ratio>();
+        // Z=55 Cesium
+        distribution_yield_129 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cs129, 
+                neutron_energy).get::<ratio>();
+        // Z=56 Barium
+        distribution_yield_129 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ba129, 
+                neutron_energy).get::<ratio>();
+        // Z=57 Lathanium
+        //distribution_yield_129 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::La129, 
+        //        neutron_energy).get::<ratio>();
+        // Z=58 Cerium
+        //distribution_yield_129 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Ce129, 
+        //        neutron_energy).get::<ratio>();
+
+
+
+        return distribution_yield_129;
+    }
+    /// gets mass yield for A=130
+    pub fn get_mass_yield_130(&self, 
+        neutron_energy: Energy) -> f64 {
+
+        let mut distribution_yield_130: f64 = 0.0;
+        // Z=23 (vanadium) -- none
+        // Z=24 (Chromium) -- none
+        // Z=25 (Manganese) -- none
+        // Z=26 (Iron) -- none
+        // Z=27 (Cobalt) -- none
+        // Z=28 (Nickel) -- none
+        // Z=29 (Copper) -- none
+        // Z=30 (Zinc) -- none
+        // Z=31 (Gallium) -- none
+        // Z=32 (Germanium) -- none
+        // Z=33 (Arsenic) -- none
+        // Z=34 (Selenium) -- none
+        // Z=35 (Bromine) -- none
+        // Z=36 (Krypton) -- none
+        // Z=37 (Rubidium) -- none
+        // Z=38 (Strontium) -- none
+        // Z=39 (Yttrium) -- none
+        // Z=40 (Zirconium) -- none
+        // Z=41 (Niobium) -- none
+        // Z=42 (Molybdenum) -- none
+        // Z=43 (Technetium) -- none
+        // Z=44 (Ruthenium) -- none
+        // Z=45 (Rhodium) -- none
+        // Z=46 Paladium
+        distribution_yield_130 += 
+            fission_yield(
+                *self, 
+                Nuclide::Pd130, 
+                neutron_energy).get::<ratio>();
+        // Z=47 Silver
+        distribution_yield_130 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag130, 
+                neutron_energy).get::<ratio>();
+        // Z=48 Cadmium
+        distribution_yield_130 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd130, 
+                neutron_energy).get::<ratio>();
+        // Z=49 Indium 
+        distribution_yield_130 += 
+            fission_yield(
+                *self, 
+                Nuclide::In130, 
+                neutron_energy).get::<ratio>();
+        // Z=50 Tin
+        distribution_yield_130 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn130, 
+                neutron_energy).get::<ratio>();
+        // Z=51 Antimony
+        distribution_yield_130 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb130, 
+                neutron_energy).get::<ratio>();
+        // Z=52 Tellurium
+        distribution_yield_130 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te130, 
+                neutron_energy).get::<ratio>();
+        // Z=53 Iodine
+        distribution_yield_130 += 
+            fission_yield(
+                *self, 
+                Nuclide::I130, 
+                neutron_energy).get::<ratio>();
+        // Z=54 Xenon
+        distribution_yield_130 += 
+            fission_yield(
+                *self, 
+                Nuclide::Xe130, 
+                neutron_energy).get::<ratio>();
+        // Z=55 Cesium
+        //distribution_yield_130 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Cs130, 
+        //        neutron_energy).get::<ratio>();
+        // Z=56 Barium
+        //distribution_yield_130 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Ba130, 
+        //        neutron_energy).get::<ratio>();
+        // Z=57 Lathanium
+        //distribution_yield_130 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::La130, 
+        //        neutron_energy).get::<ratio>();
+        // Z=58 Cerium
+        //distribution_yield_130 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Ce130, 
+        //        neutron_energy).get::<ratio>();
+
+
+
+        return distribution_yield_130;
+    }
+    /// gets mass yield for A=131
+    pub fn get_mass_yield_131(&self, 
+        neutron_energy: Energy) -> f64 {
+
+        let mut distribution_yield_131: f64 = 0.0;
+        // Z=23 (vanadium) -- none
+        // Z=24 (Chromium) -- none
+        // Z=25 (Manganese) -- none
+        // Z=26 (Iron) -- none
+        // Z=27 (Cobalt) -- none
+        // Z=28 (Nickel) -- none
+        // Z=29 (Copper) -- none
+        // Z=30 (Zinc) -- none
+        // Z=31 (Gallium) -- none
+        // Z=32 (Germanium) -- none
+        // Z=33 (Arsenic) -- none
+        // Z=34 (Selenium) -- none
+        // Z=35 (Bromine) -- none
+        // Z=36 (Krypton) -- none
+        // Z=37 (Rubidium) -- none
+        // Z=38 (Strontium) -- none
+        // Z=39 (Yttrium) -- none
+        // Z=40 (Zirconium) -- none
+        // Z=41 (Niobium) -- none
+        // Z=42 (Molybdenum) -- none
+        // Z=43 (Technetium) -- none
+        // Z=44 (Ruthenium) -- none
+        // Z=45 (Rhodium) -- none
+        // Z=46 (Paladium) -- none
+        // Z=47 Silver
+        distribution_yield_131 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag131, 
+                neutron_energy).get::<ratio>();
+        // Z=48 Cadmium
+        distribution_yield_131 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd131, 
+                neutron_energy).get::<ratio>();
+        // Z=49 Indium 
+        distribution_yield_131 += 
+            fission_yield(
+                *self, 
+                Nuclide::In131, 
+                neutron_energy).get::<ratio>();
+        // Z=50 Tin
+        distribution_yield_131 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn131, 
+                neutron_energy).get::<ratio>();
+        // Z=51 Antimony
+        distribution_yield_131 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb131, 
+                neutron_energy).get::<ratio>();
+        // Z=52 Tellurium
+        distribution_yield_131 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te131, 
+                neutron_energy).get::<ratio>();
+        // Z=53 Iodine
+        distribution_yield_131 += 
+            fission_yield(
+                *self, 
+                Nuclide::I131, 
+                neutron_energy).get::<ratio>();
+        // Z=54 Xenon
+        distribution_yield_131 += 
+            fission_yield(
+                *self, 
+                Nuclide::Xe131, 
+                neutron_energy).get::<ratio>();
+        // Z=55 Cesium
+        distribution_yield_131 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cs131, 
+                neutron_energy).get::<ratio>();
+        // Z=56 Barium
+        distribution_yield_131 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ba131, 
+                neutron_energy).get::<ratio>();
+        // Z=57 Lathanium
+        //distribution_yield_131 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::La131, 
+        //        neutron_energy).get::<ratio>();
+        // Z=58 Cerium
+        //distribution_yield_131 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Ce131, 
+        //        neutron_energy).get::<ratio>();
+
+
+
+        return distribution_yield_131;
+    }
+    /// gets mass yield for A=132
+    pub fn get_mass_yield_132(&self, 
+        neutron_energy: Energy) -> f64 {
+
+        let mut distribution_yield_132: f64 = 0.0;
+        // Z=23 (vanadium) -- none
+        // Z=24 (Chromium) -- none
+        // Z=25 (Manganese) -- none
+        // Z=26 (Iron) -- none
+        // Z=27 (Cobalt) -- none
+        // Z=28 (Nickel) -- none
+        // Z=29 (Copper) -- none
+        // Z=30 (Zinc) -- none
+        // Z=31 (Gallium) -- none
+        // Z=32 (Germanium) -- none
+        // Z=33 (Arsenic) -- none
+        // Z=34 (Selenium) -- none
+        // Z=35 (Bromine) -- none
+        // Z=36 (Krypton) -- none
+        // Z=37 (Rubidium) -- none
+        // Z=38 (Strontium) -- none
+        // Z=39 (Yttrium) -- none
+        // Z=40 (Zirconium) -- none
+        // Z=41 (Niobium) -- none
+        // Z=42 (Molybdenum) -- none
+        // Z=43 (Technetium) -- none
+        // Z=44 (Ruthenium) -- none
+        // Z=45 (Rhodium) -- none
+        // Z=46 (Paladium) -- none
+        // Z=47 Silver
+        distribution_yield_132 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ag132, 
+                neutron_energy).get::<ratio>();
+        // Z=48 Cadmium
+        distribution_yield_132 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd132, 
+                neutron_energy).get::<ratio>();
+        // Z=49 Indium 
+        distribution_yield_132 += 
+            fission_yield(
+                *self, 
+                Nuclide::In132, 
+                neutron_energy).get::<ratio>();
+        // Z=50 Tin
+        distribution_yield_132 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn132, 
+                neutron_energy).get::<ratio>();
+        // Z=51 Antimony
+        distribution_yield_132 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb132, 
+                neutron_energy).get::<ratio>();
+        // Z=52 Tellurium
+        distribution_yield_132 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te132, 
+                neutron_energy).get::<ratio>();
+        // Z=53 Iodine
+        distribution_yield_132 += 
+            fission_yield(
+                *self, 
+                Nuclide::I132, 
+                neutron_energy).get::<ratio>();
+        // Z=54 Xenon
+        distribution_yield_132 += 
+            fission_yield(
+                *self, 
+                Nuclide::Xe132, 
+                neutron_energy).get::<ratio>();
+        // Z=55 Cesium
+        distribution_yield_132 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cs132, 
+                neutron_energy).get::<ratio>();
+        // Z=56 Barium
+        distribution_yield_132 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ba132, 
+                neutron_energy).get::<ratio>();
+        // Z=57 Lathanium
+        //distribution_yield_132 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::La132, 
+        //        neutron_energy).get::<ratio>();
+        // Z=58 Cerium
+        //distribution_yield_132 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Ce132, 
+        //        neutron_energy).get::<ratio>();
+
+
+
+        return distribution_yield_132;
+    }
+    /// gets mass yield for A=133
+    pub fn get_mass_yield_133(&self, 
+        neutron_energy: Energy) -> f64 {
+
+        let mut distribution_yield_133: f64 = 0.0;
+        // Z=23 (vanadium) -- none
+        // Z=24 (Chromium) -- none
+        // Z=25 (Manganese) -- none
+        // Z=26 (Iron) -- none
+        // Z=27 (Cobalt) -- none
+        // Z=28 (Nickel) -- none
+        // Z=29 (Copper) -- none
+        // Z=30 (Zinc) -- none
+        // Z=31 (Gallium) -- none
+        // Z=32 (Germanium) -- none
+        // Z=33 (Arsenic) -- none
+        // Z=34 (Selenium) -- none
+        // Z=35 (Bromine) -- none
+        // Z=36 (Krypton) -- none
+        // Z=37 (Rubidium) -- none
+        // Z=38 (Strontium) -- none
+        // Z=39 (Yttrium) -- none
+        // Z=40 (Zirconium) -- none
+        // Z=41 (Niobium) -- none
+        // Z=42 (Molybdenum) -- none
+        // Z=43 (Technetium) -- none
+        // Z=44 (Ruthenium) -- none
+        // Z=45 (Rhodium) -- none
+        // Z=46 (Paladium) -- none
+        // Z=47 (Silver) -- none
+        // Z=48 Cadmium
+        distribution_yield_133 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd133, 
+                neutron_energy).get::<ratio>();
+        // Z=49 Indium 
+        distribution_yield_133 += 
+            fission_yield(
+                *self, 
+                Nuclide::In133, 
+                neutron_energy).get::<ratio>();
+        // Z=50 Tin
+        distribution_yield_133 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn133, 
+                neutron_energy).get::<ratio>();
+        // Z=51 Antimony
+        distribution_yield_133 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb133, 
+                neutron_energy).get::<ratio>();
+        // Z=52 Tellurium
+        distribution_yield_133 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te133, 
+                neutron_energy).get::<ratio>();
+        // Z=53 Iodine
+        distribution_yield_133 += 
+            fission_yield(
+                *self, 
+                Nuclide::I133, 
+                neutron_energy).get::<ratio>();
+        // Z=54 Xenon
+        distribution_yield_133 += 
+            fission_yield(
+                *self, 
+                Nuclide::Xe133, 
+                neutron_energy).get::<ratio>();
+        // Z=55 Cesium
+        distribution_yield_133 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cs133, 
+                neutron_energy).get::<ratio>();
+        // Z=56 Barium
+        distribution_yield_133 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ba133, 
+                neutron_energy).get::<ratio>();
+        // Z=57 Lathanium
+        distribution_yield_133 += 
+            fission_yield(
+                *self, 
+                Nuclide::La133, 
+                neutron_energy).get::<ratio>();
+        // Z=58 Cerium
+        //distribution_yield_133 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Ce133, 
+        //        neutron_energy).get::<ratio>();
+        // Z=59 Praseodymium
+        //distribution_yield_133 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Pr133, 
+        //        neutron_energy).get::<ratio>();
+
+
+
+        return distribution_yield_133;
+    }
+    /// gets mass yield for A=134
+    pub fn get_mass_yield_134(&self, 
+        neutron_energy: Energy) -> f64 {
+
+        let mut distribution_yield_134: f64 = 0.0;
+        // Z=23 (vanadium) -- none
+        // Z=24 (Chromium) -- none
+        // Z=25 (Manganese) -- none
+        // Z=26 (Iron) -- none
+        // Z=27 (Cobalt) -- none
+        // Z=28 (Nickel) -- none
+        // Z=29 (Copper) -- none
+        // Z=30 (Zinc) -- none
+        // Z=31 (Gallium) -- none
+        // Z=32 (Germanium) -- none
+        // Z=33 (Arsenic) -- none
+        // Z=34 (Selenium) -- none
+        // Z=35 (Bromine) -- none
+        // Z=36 (Krypton) -- none
+        // Z=37 (Rubidium) -- none
+        // Z=38 (Strontium) -- none
+        // Z=39 (Yttrium) -- none
+        // Z=40 (Zirconium) -- none
+        // Z=41 (Niobium) -- none
+        // Z=42 (Molybdenum) -- none
+        // Z=43 (Technetium) -- none
+        // Z=44 (Ruthenium) -- none
+        // Z=45 (Rhodium) -- none
+        // Z=46 (Paladium) -- none
+        // Z=47 (Silver) -- none
+        // Z=48 Cadmium
+        distribution_yield_134 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd134, 
+                neutron_energy).get::<ratio>();
+        // Z=49 Indium 
+        distribution_yield_134 += 
+            fission_yield(
+                *self, 
+                Nuclide::In134, 
+                neutron_energy).get::<ratio>();
+        // Z=50 Tin
+        distribution_yield_134 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn134, 
+                neutron_energy).get::<ratio>();
+        // Z=51 Antimony
+        distribution_yield_134 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb134, 
+                neutron_energy).get::<ratio>();
+        // Z=52 Tellurium
+        distribution_yield_134 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te134, 
+                neutron_energy).get::<ratio>();
+        // Z=53 Iodine
+        distribution_yield_134 += 
+            fission_yield(
+                *self, 
+                Nuclide::I134, 
+                neutron_energy).get::<ratio>();
+        // Z=54 Xenon
+        distribution_yield_134 += 
+            fission_yield(
+                *self, 
+                Nuclide::Xe134, 
+                neutron_energy).get::<ratio>();
+        // Z=55 Cesium
+        distribution_yield_134 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cs134, 
+                neutron_energy).get::<ratio>();
+        // Z=56 Barium
+        distribution_yield_134 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ba134, 
+                neutron_energy).get::<ratio>();
+        // Z=57 Lathanium
+        //distribution_yield_134 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::La134, 
+        //        neutron_energy).get::<ratio>();
+        // Z=58 Cerium
+        //distribution_yield_134 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Ce134, 
+        //        neutron_energy).get::<ratio>();
+        // Z=59 Praseodymium
+        //distribution_yield_134 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Pr134, 
+        //        neutron_energy).get::<ratio>();
+
+
+
+        return distribution_yield_134;
+    }
+    /// gets mass yield for A=135
+    pub fn get_mass_yield_135(&self, 
+        neutron_energy: Energy) -> f64 {
+
+        let mut distribution_yield_135: f64 = 0.0;
+        // Z=23 (vanadium) -- none
+        // Z=24 (Chromium) -- none
+        // Z=25 (Manganese) -- none
+        // Z=26 (Iron) -- none
+        // Z=27 (Cobalt) -- none
+        // Z=28 (Nickel) -- none
+        // Z=29 (Copper) -- none
+        // Z=30 (Zinc) -- none
+        // Z=31 (Gallium) -- none
+        // Z=32 (Germanium) -- none
+        // Z=33 (Arsenic) -- none
+        // Z=34 (Selenium) -- none
+        // Z=35 (Bromine) -- none
+        // Z=36 (Krypton) -- none
+        // Z=37 (Rubidium) -- none
+        // Z=38 (Strontium) -- none
+        // Z=39 (Yttrium) -- none
+        // Z=40 (Zirconium) -- none
+        // Z=41 (Niobium) -- none
+        // Z=42 (Molybdenum) -- none
+        // Z=43 (Technetium) -- none
+        // Z=44 (Ruthenium) -- none
+        // Z=45 (Rhodium) -- none
+        // Z=46 (Paladium) -- none
+        // Z=47 (Silver) -- none
+        // Z=48 Cadmium
+        distribution_yield_135 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cd135, 
+                neutron_energy).get::<ratio>();
+        // Z=49 Indium 
+        distribution_yield_135 += 
+            fission_yield(
+                *self, 
+                Nuclide::In135, 
+                neutron_energy).get::<ratio>();
+        // Z=50 Tin
+        distribution_yield_135 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sn135, 
+                neutron_energy).get::<ratio>();
+        // Z=51 Antimony
+        distribution_yield_135 += 
+            fission_yield(
+                *self, 
+                Nuclide::Sb135, 
+                neutron_energy).get::<ratio>();
+        // Z=52 Tellurium
+        distribution_yield_135 += 
+            fission_yield(
+                *self, 
+                Nuclide::Te135, 
+                neutron_energy).get::<ratio>();
+        // Z=53 Iodine
+        distribution_yield_135 += 
+            fission_yield(
+                *self, 
+                Nuclide::I135, 
+                neutron_energy).get::<ratio>();
+        // Z=54 Xenon
+        distribution_yield_135 += 
+            fission_yield(
+                *self, 
+                Nuclide::Xe135, 
+                neutron_energy).get::<ratio>();
+        // Z=55 Cesium
+        distribution_yield_135 += 
+            fission_yield(
+                *self, 
+                Nuclide::Cs135, 
+                neutron_energy).get::<ratio>();
+        // Z=56 Barium
+        distribution_yield_135 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ba135, 
+                neutron_energy).get::<ratio>();
+        // Z=57 Lathanium
+        distribution_yield_135 += 
+            fission_yield(
+                *self, 
+                Nuclide::La135, 
+                neutron_energy).get::<ratio>();
+        // Z=58 Cerium
+        distribution_yield_135 += 
+            fission_yield(
+                *self, 
+                Nuclide::Ce135, 
+                neutron_energy).get::<ratio>();
+        // Z=59 Praseodymium
+        //distribution_yield_135 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Pr135, 
+        //        neutron_energy).get::<ratio>();
+        // Z=60 Neodymium
+        //distribution_yield_135 += 
+        //    fission_yield(
+        //        *self, 
+        //        Nuclide::Nd135, 
+        //        neutron_energy).get::<ratio>();
+
+
+
+        return distribution_yield_135;
+    }
 }
 
 
