@@ -59,3 +59,7 @@ fn example_2(){
         test_yield,
         max_relative=1e-9);
 }
+
+/// now suppose you wanted to have the entire mass distribution
+/// this is how you would do it
+pub mod mass_distributions;
