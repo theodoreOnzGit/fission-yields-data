@@ -63,6 +63,16 @@
 //! This was quite a pain.
 //! Hence, I used a lookup table in order to ease some of the pain 
 //! This involved doing a periodic table of elements.
+//!
+//!
+//! Note: 
+//! The Nuclide crate has something to offer, but it is rather
+//! unsuited for this task as it has to do with atomic information eg. 
+//! Electronegativity rather than nuclear information, eg. decays, 
+//! fission yields, nuclear isomers etc.
+//! https://crates.io/crates/Nuclide
+//!
+//! However, it does have decay chains which may be useful
 
 
 #[warn(missing_docs)]
