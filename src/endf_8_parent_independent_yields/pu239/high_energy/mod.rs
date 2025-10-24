@@ -1286,6 +1286,22 @@ pub fn pu239_high_fission_yield(nuc: Nuclide) -> Ratio {
         Sm169 => 0.0,
         Sm171 => 0.0,
         Eu171 => 0.0,
+        Fe65 => 0.0,
+        Co65 => 0.0,
+        Ni65 => 0.0,
+        Cu65 => 0.0,
+        Cu70n => 0.0,
+        Ge81m => 0.0,
+        As75m => 0.0,
+        Y87m => 0.0,
+        Zr89m => 0.0,
+        Nb91m => 0.0,
+        Rh99m => 0.0,
+        Cd123m => 0.0,
+        In111m => 0.0,
+        Sb115m => 0.0,
+        Sb129m => 0.0,
+        Gd153m => 0.0,
     };
 
     return Ratio::new::<ratio>(yield_float);

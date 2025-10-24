@@ -1286,7 +1286,22 @@ pub fn u235_thermal_fission_yield(nuc: Nuclide) -> Ratio {
         Pu240 => 0.0,
         Pu241 => 0.0,
         Pu242 => 0.0,
-
+        Fe65 => 0.0,
+        Co65 => 0.0,
+        Ni65 => 0.0,
+        Cu65 => 0.0,
+        Cu70n => 0.0,
+        Ge81m => 0.0,
+        As75m => 0.0,
+        Y87m => 0.0,
+        Zr89m => 0.0,
+        Nb91m => 0.0,
+        Rh99m => 0.0,
+        Cd123m => 0.0,
+        In111m => 0.0,
+        Sb115m => 0.0,
+        Sb129m => 0.0,
+        Gd153m => 0.0,
     };
 
     return Ratio::new::<ratio>(yield_float);
