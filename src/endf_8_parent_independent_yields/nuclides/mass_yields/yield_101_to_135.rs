@@ -1795,6 +1795,11 @@ impl Nuclide {
                 *self, 
                 Nuclide::In116m, 
                 neutron_energy).get::<ratio>();
+        distribution_yield_116 += 
+            fission_yield(
+                *self, 
+                Nuclide::In116n, 
+                neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_116 += 
             fission_yield(
