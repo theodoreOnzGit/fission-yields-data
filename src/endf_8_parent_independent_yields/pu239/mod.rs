@@ -7,6 +7,9 @@ pub(crate) mod thermal_energy;
 /// 500 keV
 pub(crate) mod fast_energy;
 
+/// fission yields for 2 MeV energy spectrum 
+pub(crate) mod two_mev_energy;
+
 /// fission yields for high energy spectrum 
 /// Likely fusion
 /// 14 MeV
@@ -21,6 +24,7 @@ use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
 use crate::endf_8_parent_independent_yields::pu239::fast_energy::pu239_fast_fission_yield;
 use crate::endf_8_parent_independent_yields::pu239::high_energy::pu239_high_fission_yield;
 use crate::endf_8_parent_independent_yields::pu239::thermal_energy::pu239_thermal_fission_yield;
+use crate::endf_8_parent_independent_yields::pu239::two_mev_energy::pu239_two_mev_fission_yield;
 
 
 // note that for plutonium, there is a fast reactor spectrum at 2 MeV
@@ -50,6 +54,10 @@ pub (crate) fn linear_linear_energy_interpolation_pu239(
         // high energy case
         return pu239_high_fission_yield(fission_product_nuclide);
 
+    } else if neutron_energy == two_mev_neutron_energy {
+
+        // 2 MeV Case
+        return pu239_two_mev_fission_yield(fission_product_nuclide);
     }
 
     // if neutron energy less than thermal
@@ -93,13 +101,38 @@ pub (crate) fn linear_linear_energy_interpolation_pu239(
         return fission_yield;
     } 
 
-    // this is for interpolating between fast and high range 
+    // then if neutron is less than two mev, interpolate between 
+    // 2MeV yield and 500 keV yield (fast energy)
+    if neutron_energy < two_mev_neutron_energy {
+
+        let two_mev_yield = pu239_two_mev_fission_yield(
+            fission_product_nuclide);
+        // the interpolation is 
+        // (x - x1)/(x2 - x1)
+
+        let denominator = two_mev_neutron_energy - fast_neutron_energy;
+        let numerator = neutron_energy - fast_neutron_energy;
+
+        // basically the degree of fastness is x 
+        // where 
+        // fission yield = x * fast_yield + (1-x) * thermal_yield
+        let degree_of_fastness: f64 = (numerator/denominator).get::<ratio>();
+
+        let fission_yield = degree_of_fastness * two_mev_yield 
+            + (1.0 - degree_of_fastness) * fast_fission_yield;
+
+        return fission_yield;
+    }
+
+    // this is for interpolating between 2 MeV and high (14 MeV) range
 
     let high_fission_yield = pu239_high_fission_yield(
         fission_product_nuclide);
+    let two_mev_yield = pu239_two_mev_fission_yield(
+        fission_product_nuclide);
 
-    let denominator = high_neutron_energy - fast_neutron_energy;
-    let numerator = neutron_energy - fast_neutron_energy;
+    let denominator = high_neutron_energy - two_mev_neutron_energy;
+    let numerator = neutron_energy - two_mev_neutron_energy;
 
     // basically the degree of fastness is x 
     // where 
@@ -107,7 +140,7 @@ pub (crate) fn linear_linear_energy_interpolation_pu239(
     let degree_of_fastness: f64 = (numerator/denominator).get::<ratio>();
 
     let fission_yield = degree_of_fastness * high_fission_yield 
-        + (1.0 - degree_of_fastness) * fast_fission_yield;
+        + (1.0 - degree_of_fastness) * two_mev_yield;
 
     return fission_yield;
 }
