@@ -3878,6 +3878,11 @@ impl Nuclide {
         distribution_yield_167 += 
             fission_yield(
                 *self, 
+                Nuclide::Er167m, 
+                neutron_energy).get::<ratio>();
+        distribution_yield_167 += 
+            fission_yield(
+                *self, 
                 Nuclide::Er167, 
                 neutron_energy).get::<ratio>();
         // Z=69 Thulium
