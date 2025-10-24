@@ -60,6 +60,7 @@ fn example_2(){
         max_relative=1e-9);
 }
 
+
 /// now suppose you wanted to have the entire mass distribution
 /// this is how you would do it
 ///
@@ -68,3 +69,17 @@ fn example_2(){
 /// these serve as important regression tests to check if the individual 
 /// yields add up to the mass yields as provided by ENDF/VIII.0
 pub mod mass_distributions_thermal_spectrum;
+
+
+
+/// now, for fission yields, data is usually given in the neutron energies
+///
+/// 1. 0.0253 eV 
+/// 2. 500 keV
+/// 3. 14.0 MeV 
+///
+/// For Pu239, and some other isotopes, there is also fission data at 2 Mev 
+///
+/// In this code, we use simple linear interpolation to estimate yields 
+/// at certain energies. This is the simplest possible way
+pub mod linear_interpolation_examples;
