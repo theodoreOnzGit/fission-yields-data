@@ -23,6 +23,8 @@ use crate::endf_8_parent_independent_yields::pu239::high_energy::pu239_high_fiss
 use crate::endf_8_parent_independent_yields::pu239::thermal_energy::pu239_thermal_fission_yield;
 
 
+// note that for plutonium, there is a fast reactor spectrum at 2 MeV
+// Those are important to put in as well
 pub (crate) fn linear_linear_energy_interpolation_pu239(
     neutron_energy: Energy,
     fission_product_nuclide: Nuclide,
@@ -32,6 +34,7 @@ pub (crate) fn linear_linear_energy_interpolation_pu239(
     // if neutron energy less than thermal don't bother
     let thermal_neutron_energy = Energy::new::<electronvolt>(0.0253);
     let fast_neutron_energy = Energy::new::<kiloelectronvolt>(500.0);
+    let two_mev_neutron_energy = Energy::new::<megaelectronvolt>(2.0);
     let high_neutron_energy = Energy::new::<megaelectronvolt>(14.0);
 
     // handle edge cases
