@@ -83,3 +83,9 @@ pub mod mass_distributions_thermal_spectrum;
 /// In this code, we use simple linear interpolation to estimate yields 
 /// at certain energies. This is the simplest possible way
 pub mod linear_interpolation_examples;
+
+/// for fission yields fast spectrum, some nuclides are tested, eg. U238 
+/// since fission only happens at fast spectrum here 
+///
+/// this is for 500 keV 
+pub mod mass_distributions_500_kev_spectrum;
