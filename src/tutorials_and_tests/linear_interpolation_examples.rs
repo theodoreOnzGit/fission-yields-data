@@ -2,7 +2,7 @@ use uom::si::energy::{electronvolt, kiloelectronvolt, megaelectronvolt};
 use uom::si::f64::Energy;
 use uom::si::ratio::ratio;
 
-use crate::prelude::fission_yield;
+use crate::prelude::fission_yield_linear_interpolation;
 use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
 /// suppose we are doing yield of Cs-137 for U233
 /// at 1 keV incoming neutron
@@ -13,7 +13,7 @@ fn linear_interpolation_example_1(){
     let cesium_137 = Nuclide::Cs137;
     let uranium_233 = Nuclide::U233;
     let neutron_energy = Energy::new::<kiloelectronvolt>(1.0);
-    let test_yield: f64 = fission_yield(
+    let test_yield: f64 = fission_yield_linear_interpolation(
         uranium_233, 
         cesium_137, 
         neutron_energy).get::<ratio>();
@@ -58,7 +58,7 @@ fn linear_interpolation_example_2(){
     let cesium_137 = Nuclide::Cs137;
     let uranium_235 = Nuclide::U235;
     let neutron_energy = Energy::new::<megaelectronvolt>(3.0);
-    let test_yield: f64 = fission_yield(
+    let test_yield: f64 = fission_yield_linear_interpolation(
         uranium_235, 
         cesium_137, 
         neutron_energy).get::<ratio>();
@@ -119,7 +119,7 @@ fn linear_interpolation_example_3(){
     let xenon_135 = Nuclide::Xe135;
     let plutonium_239 = Nuclide::Pu239;
     let neutron_energy = Energy::new::<kiloelectronvolt>(1.0);
-    let test_yield: f64 = fission_yield(
+    let test_yield: f64 = fission_yield_linear_interpolation(
         plutonium_239, 
         xenon_135, 
         neutron_energy).get::<ratio>();
@@ -183,7 +183,7 @@ fn linear_interpolation_example_4(){
     let xenon_135 = Nuclide::Xe135;
     let plutonium_239 = Nuclide::Pu239;
     let neutron_energy = Energy::new::<kiloelectronvolt>(1500.0);
-    let test_yield: f64 = fission_yield(
+    let test_yield: f64 = fission_yield_linear_interpolation(
         plutonium_239, 
         xenon_135, 
         neutron_energy).get::<ratio>();
@@ -249,7 +249,7 @@ fn linear_interpolation_example_5(){
     let xenon_135 = Nuclide::Xe135;
     let plutonium_239 = Nuclide::Pu239;
     let neutron_energy = Energy::new::<kiloelectronvolt>(7000.0);
-    let test_yield: f64 = fission_yield(
+    let test_yield: f64 = fission_yield_linear_interpolation(
         plutonium_239, 
         xenon_135, 
         neutron_energy).get::<ratio>();

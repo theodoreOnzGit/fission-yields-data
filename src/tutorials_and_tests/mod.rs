@@ -2,7 +2,7 @@ use uom::si::energy::electronvolt;
 use uom::si::f64::Energy;
 use uom::si::ratio::ratio;
 
-use crate::prelude::fission_yield;
+use crate::prelude::fission_yield_linear_interpolation;
 use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
 
 #[test]
@@ -15,7 +15,7 @@ fn example_1(){
     let uranium_233 = Nuclide::U233;
     let neutron_energy = Energy::new::<electronvolt>(0.0253);
 
-    let test_yield: f64 = fission_yield(uranium_233, cobalt_66, neutron_energy)
+    let test_yield: f64 = fission_yield_linear_interpolation(uranium_233, cobalt_66, neutron_energy)
         .get::<ratio>();
 
     // if coded correctly, the test yield should equal the reference yield 

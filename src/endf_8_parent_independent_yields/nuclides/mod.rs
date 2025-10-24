@@ -1,4 +1,4 @@
-use crate::prelude::fission_yield;
+use crate::prelude::fission_yield_linear_interpolation;
 use uom::si::{f64::*, ratio::ratio};
 
 /// Provides an enum of all nuclides within the 
@@ -1320,62 +1320,62 @@ impl Nuclide {
             let mut distribution_yield_66: f64 = 0.0;
             // Z=23 (vanadium)
             distribution_yield_66 += 
-                fission_yield(
+                fission_yield_linear_interpolation(
                     *self, 
                     Nuclide::V66, 
                     neutron_energy).get::<ratio>();
             // Z=24 (Chromium)
             distribution_yield_66 += 
-                fission_yield(
+                fission_yield_linear_interpolation(
                     *self, 
                     Nuclide::Cr66, 
                     neutron_energy).get::<ratio>();
             // Z=25 (Manganese)
             distribution_yield_66 += 
-                fission_yield(
+                fission_yield_linear_interpolation(
                     *self, 
                     Nuclide::Mn66, 
                     neutron_energy).get::<ratio>();
             // Z=26 Iron
             distribution_yield_66 += 
-                fission_yield(
+                fission_yield_linear_interpolation(
                     *self, 
                     Nuclide::Fe66, 
                     neutron_energy).get::<ratio>();
 
             // Z=27 Cobalt
             distribution_yield_66 += 
-                fission_yield(
+                fission_yield_linear_interpolation(
                     *self, 
                     Nuclide::Co66, 
                     neutron_energy).get::<ratio>();
             // Z=28 Nickel
             distribution_yield_66 += 
-                fission_yield(
+                fission_yield_linear_interpolation(
                     *self, 
                     Nuclide::Ni66, 
                     neutron_energy).get::<ratio>();
             // Z=29 Copper
             distribution_yield_66 += 
-                fission_yield(
+                fission_yield_linear_interpolation(
                     *self, 
                     Nuclide::Cu66, 
                     neutron_energy).get::<ratio>();
             // Z=30 Zinc
             distribution_yield_66 += 
-                fission_yield(
+                fission_yield_linear_interpolation(
                     *self, 
                     Nuclide::Zn66, 
                     neutron_energy).get::<ratio>();
             // Z=31 Gallium
             distribution_yield_66 += 
-                fission_yield(
+                fission_yield_linear_interpolation(
                     *self, 
                     Nuclide::Ga66, 
                     neutron_energy).get::<ratio>();
             // Z=32 Germanium
             distribution_yield_66 += 
-                fission_yield(
+                fission_yield_linear_interpolation(
                     *self, 
                     Nuclide::Ge66, 
                     neutron_energy).get::<ratio>();
