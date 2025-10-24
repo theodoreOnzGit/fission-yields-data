@@ -62,4 +62,9 @@ fn example_2(){
 
 /// now suppose you wanted to have the entire mass distribution
 /// this is how you would do it
-pub mod mass_distributions;
+///
+/// this is for the thermal spectrum yields for u233, u235 and pu239
+///
+/// these serve as important regression tests to check if the individual 
+/// yields add up to the mass yields as provided by ENDF/VIII.0
+pub mod mass_distributions_thermal_spectrum;
