@@ -26,6 +26,29 @@
 //! For this library we use independent fission yields
 //!
 //! 
+//! I also used Nudat 3 to obtain a list of nuclides
+//! https://www.nndc.bnl.gov/nudat3/guide/
+//!
+//! Provided under the following terms and conditions:
+//!
+//!  This disclaimer applies to all BNL web products, including NuDat.
+//! 
+//! NuDat contains evaluated nuclear data - i.e. recommended values 
+//! following a careful analysis of the available data. We cannot, 
+//! however, guarantee the accuracy of the data or the absence of errors 
+//! in the application. Users are urged to promptly report any problems 
+//! encountered when using NuDat.
+//! 
+//! Users should be aware that NuDat contents change often as new 
+//! data is incorporated.
+//! 
+//! Users should feel free to use the information from NuDat (tables and 
+//! plots) in their work, reports, presentations, articles and books. For 
+//! those interested in quoting NuDat, we suggest using the following 
+//! citation format:
+//! 
+//! National Nuclear Data Center, information extracted from the 
+//! NuDat database, https://www.nndc.bnl.gov/nudat/
 
 
 #[warn(missing_docs)]
