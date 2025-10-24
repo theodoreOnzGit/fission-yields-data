@@ -13,3 +13,5 @@ pub fn fission_yield_linear_interpolation(fissioning_nuclide: Nuclide,
         neutron_energy, fissioning_nuclide, fission_product_nuclide);
 
 }
+
+pub use crate::endf_8_parent_independent_yields::pa231::pa231_fast_fission_yield;
