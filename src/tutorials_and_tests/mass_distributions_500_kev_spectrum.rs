@@ -6,6 +6,9 @@ use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
 /// from independent fission yields
 ///
 /// this helps give some assurance that the yield curves were coded correctly
+///
+/// some nuclides were ignored in this case, as their contributions 
+/// were insignificant
 #[test]
 pub fn u238_500_kev_mass_distribution(){
 
