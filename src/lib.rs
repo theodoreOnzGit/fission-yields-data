@@ -49,6 +49,20 @@
 //! 
 //! National Nuclear Data Center, information extracted from the 
 //! NuDat database, https://www.nndc.bnl.gov/nudat/
+//!
+//! I also used the periodic table of elements from here:
+//! https://gist.github.com/GoodmanSciences/c2dd862cd38f21b0ad36b8f96b4bf1ee
+//!
+//!
+//! This is because JANIS provided nuclide data in the following format
+//!
+//! eg. Co60
+//! and NNDC provided nuclide data in 
+//! 60Co
+//!
+//! This was quite a pain.
+//! Hence, I used a lookup table in order to ease some of the pain 
+//! This involved doing a periodic table of elements.
 
 
 #[warn(missing_docs)]

@@ -26,6 +26,7 @@ target
 /target
 
 *.csv#
+*.ods#
 
 # Added by cargo
 #
