@@ -4,7 +4,7 @@ use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
 use Nuclide::*;
 
 
-pub fn u238_high_fission_yield(nuc: Nuclide) -> Ratio {
+pub fn th232_high_fission_yield(nuc: Nuclide) -> Ratio {
 
     let yield_float: f64 = match nuc {
         Ti66 =>  0.0 ,
@@ -1354,5 +1354,6 @@ pub fn u238_high_fission_yield(nuc: Nuclide) -> Ratio {
 
     return Ratio::new::<ratio>(yield_float);
 }
+
 
 

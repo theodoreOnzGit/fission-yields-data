@@ -1350,6 +1350,7 @@ pub fn pu239_high_fission_yield(nuc: Nuclide) -> Ratio {
         Pm169 => 0.0,
         Sm172 => 0.0,
         Eu172 => 0.0,
+        Th232 => 0.0,
     };
 
     return Ratio::new::<ratio>(yield_float);

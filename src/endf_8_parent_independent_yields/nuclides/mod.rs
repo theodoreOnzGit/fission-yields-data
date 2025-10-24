@@ -6,6 +6,7 @@ use uom::si::{f64::*, ratio::ratio};
 #[allow(non_snake_case)]
 #[derive(Debug,Clone,Copy)]
 pub enum Nuclide {
+    Th232,
     U235,
     U232,
     U233,
