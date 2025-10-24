@@ -1,4 +1,4 @@
-use uom::si::energy::{electronvolt, kiloelectronvolt};
+use uom::si::energy::{electronvolt, kiloelectronvolt, megaelectronvolt};
 use uom::si::f64::Energy;
 use uom::si::ratio::ratio;
 
@@ -46,5 +46,54 @@ fn linear_interpolation_example_1(){
 
     // if coded correctly, the test yield should equal the reference yield 
     assert_eq!(reference_yield,test_yield);
+
+}
+/// similarly, suppose 
+/// we are doing yield of Cs-137 for U235
+/// at 3 MeV incoming neutron
+#[test]
+fn linear_interpolation_example_2(){
+
+    // first we decide our nuclides
+    let cesium_137 = Nuclide::Cs137;
+    let uranium_233 = Nuclide::U235;
+    let neutron_energy = Energy::new::<megaelectronvolt>(3.0);
+    let test_yield: f64 = fission_yield(
+        uranium_233, 
+        cesium_137, 
+        neutron_energy).get::<ratio>();
+
+    // now behind the scenes, we are linearly interpolating the yields 
+    // between 0.0253 eV and 500 keV
+
+    let fast_energy = Energy::new::<kiloelectronvolt>(500.0);
+    let high_energy = Energy::new::<megaelectronvolt>(14.0);
+
+    // taken straight from endf 8 libraries, the thermal and fast yields are
+    // for cs-137:
+    //
+    // 
+    let _thermal_yield: f64 = 5.99988E-4;
+    let fast_yield: f64 = 0.00228352;
+    // the high yield for 14 MeV neutron is also provided for reference here
+    let high_yield: f64 = 0.00947521;
+
+
+    // using linear interpolation, we calculate the reference yield
+
+    let numerator: Energy = neutron_energy - fast_energy; 
+    let denominator: Energy = high_energy - fast_energy;
+
+    let reference_yield: f64 = 
+        fast_yield + 
+        (high_yield - fast_yield) * 
+        (numerator/denominator).get::<ratio>();
+
+    // if coded correctly, the test yield should equal the reference yield 
+    approx::assert_relative_eq!(
+        reference_yield,
+        test_yield,
+        max_relative=1e-12
+    );
 
 }
