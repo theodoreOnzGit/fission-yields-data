@@ -16,3 +16,4 @@ pub fn fission_yield_linear_interpolation(fissioning_nuclide: Nuclide,
 
 pub use crate::endf_8_parent_independent_yields::pa231::pa231_fast_fission_yield;
 pub use crate::endf_8_parent_independent_yields::u237::u237_fast_fission_yield;
+pub use crate::endf_8_parent_independent_yields::u232::thermal_energy::u232_thermal_fission_yield;

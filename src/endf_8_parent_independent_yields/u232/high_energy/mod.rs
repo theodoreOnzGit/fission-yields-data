@@ -7,7 +7,7 @@ use Nuclide::*;
 
 /// note, u232 only has thermal fission data,
 /// i'm leaving thermal fission data here as a placeholder
-pub fn u232_high_fission_yield(nuc: Nuclide) -> Ratio {
+pub (crate) fn _u232_high_fission_yield(nuc: Nuclide) -> Ratio {
 
     let yield_float: f64 = match nuc {
         V66 => 1.96075E-14,

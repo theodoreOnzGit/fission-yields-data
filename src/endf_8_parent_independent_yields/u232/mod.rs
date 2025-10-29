@@ -17,14 +17,15 @@ use uom::si::energy::{electronvolt, kiloelectronvolt, megaelectronvolt};
 use uom::si::ratio::ratio;
 
 use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
-use crate::endf_8_parent_independent_yields::u232::fast_energy::u232_fast_fission_yield;
-use crate::endf_8_parent_independent_yields::u232::high_energy::u232_high_fission_yield;
+use crate::endf_8_parent_independent_yields::u232::fast_energy::_u232_fast_fission_yield;
+use crate::endf_8_parent_independent_yields::u232::high_energy::_u232_high_fission_yield;
 use crate::endf_8_parent_independent_yields::u232::thermal_energy::u232_thermal_fission_yield;
 
 
 /// note: u232 only has thermal table data
 /// hence, whatever energy is supplied, thermal fission data is given
-pub (crate) fn linear_linear_energy_interpolation_u232(
+/// this is just a placeholder
+pub (crate) fn _linear_linear_energy_interpolation_u232(
     neutron_energy: Energy,
     fission_product_nuclide: Nuclide,
 ) -> Ratio {
@@ -42,11 +43,11 @@ pub (crate) fn linear_linear_energy_interpolation_u232(
 
     } else if neutron_energy == fast_neutron_energy {
         // fast energy case
-        return u232_fast_fission_yield(fission_product_nuclide);
+        return _u232_fast_fission_yield(fission_product_nuclide);
 
     } else if neutron_energy == high_neutron_energy {
         // high energy case
-        return u232_high_fission_yield(fission_product_nuclide);
+        return _u232_high_fission_yield(fission_product_nuclide);
 
     }
 
@@ -66,7 +67,7 @@ pub (crate) fn linear_linear_energy_interpolation_u232(
     // in this case, we interpolate between the high side and low side 
 
     // we evaluate the fast fission yield first 
-    let fast_fission_yield = u232_fast_fission_yield(
+    let fast_fission_yield = _u232_fast_fission_yield(
         fission_product_nuclide);
 
     // this is for interpolating between thermal and fast range
@@ -93,7 +94,7 @@ pub (crate) fn linear_linear_energy_interpolation_u232(
 
     // this is for interpolating between fast and high range 
 
-    let high_fission_yield = u232_high_fission_yield(
+    let high_fission_yield = _u232_high_fission_yield(
         fission_product_nuclide);
 
     let denominator = high_neutron_energy - fast_neutron_energy;
