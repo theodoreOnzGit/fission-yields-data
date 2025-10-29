@@ -3,6 +3,7 @@ use uom::si::f64::*;
 use crate::endf_8_parent_independent_yields::np237::linear_linear_energy_interpolation_np237;
 use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
 use crate::endf_8_parent_independent_yields::pu239::linear_linear_energy_interpolation_pu239;
+use crate::endf_8_parent_independent_yields::pu240::linear_linear_energy_interpolation_pu240;
 use crate::endf_8_parent_independent_yields::pu241::linear_linear_energy_interpolation_pu241;
 use crate::endf_8_parent_independent_yields::th232::linear_linear_energy_interpolation_th232;
 use crate::endf_8_parent_independent_yields::u233::linear_linear_energy_interpolation_u233;
@@ -54,6 +55,9 @@ pub fn linear_linear_energy_interpolation(
         // everything else interpolates as per normal
         Nuclide::U236 => {
             return linear_linear_energy_interpolation_u236(neutron_energy, fission_product_nuclide);
+        },
+        Nuclide::Pu240 => {
+            return linear_linear_energy_interpolation_pu240(neutron_energy, fission_product_nuclide);
         },
 
 

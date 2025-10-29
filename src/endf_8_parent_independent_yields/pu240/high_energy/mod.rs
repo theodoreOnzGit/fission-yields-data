@@ -4,8 +4,6 @@ use uom::si::f64::*;
 use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
 use Nuclide::*;
 
-/// note, there is no data for high (14.0 MeV) fission yields of pu240
-/// just setting it to the fast energy range
 pub fn pu240_high_fission_yield(nuc: Nuclide) -> Ratio {
 
     let yield_float: f64 = match nuc {
