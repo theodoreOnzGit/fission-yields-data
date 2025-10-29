@@ -3,6 +3,13 @@ name = "fission-yields-data"
 version = "0.1.1"
 edition = "2024"
 
+license = "GPL-3.0"
+description = "Fission Yield Data for some nuclides"
+homepage = "https://github.com/theodoreOnzGit/fission-yields-data"
+repository ="https://github.com/theodoreOnzGit/fission-yields-data"
+readme = "README.md"
+categories = ["science"]
+
 [dependencies]
 uom = "0.37.0"
 
