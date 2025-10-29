@@ -41,6 +41,11 @@ pub fn linear_linear_energy_interpolation(
         Nuclide::Pu241 => {
             return linear_linear_energy_interpolation_pu241(neutron_energy, fission_product_nuclide);
         },
+        // note: U232 only has thermal fission data, so any energy given 
+        // will just yield thermal fissions
+        Nuclide::U232 => {
+            return linear_linear_energy_interpolation_u235(neutron_energy, fission_product_nuclide);
+        },
 
         _ => todo!("fissioning nuclide interpolation not implemented"),
     };
