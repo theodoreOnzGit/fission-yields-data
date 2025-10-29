@@ -24,9 +24,6 @@ use crate::endf_8_parent_independent_yields::pu242::high_energy::pu242_high_fiss
 use crate::endf_8_parent_independent_yields::pu242::thermal_energy::pu242_thermal_fission_yield;
 
 
-/// note that pu242 does not have data at 14.0 MeV for ENDF VIII,
-/// 
-/// code will not work beyond 500 keV
 pub (crate) fn linear_linear_energy_interpolation_pu242(
     neutron_energy: Energy,
     fission_product_nuclide: Nuclide,
@@ -49,7 +46,7 @@ pub (crate) fn linear_linear_energy_interpolation_pu242(
 
     } else if neutron_energy == high_neutron_energy {
         // high energy case
-        todo!("dataset does not contain fission yield past 500 keV");
+        return pu242_high_fission_yield(fission_product_nuclide);
 
     }
 
@@ -60,8 +57,8 @@ pub (crate) fn linear_linear_energy_interpolation_pu242(
     if neutron_energy < thermal_neutron_energy {
         todo!();
     }
-    if neutron_energy > fast_neutron_energy {
-        todo!("dataset does not contain fission yield past 500 keV");
+    if neutron_energy > high_neutron_energy {
+        todo!();
     }
 
     // next we decide between thermal to fast and thermal to high 
