@@ -30,3 +30,13 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ```
+
+# patch notes 
+
+v0.1.1
+
+fixed that the Nuclide class was not publicly available
+
+v0.1.0
+
+First version

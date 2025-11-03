@@ -19,3 +19,5 @@ pub use crate::endf_8_parent_independent_yields::u237::u237_fast_fission_yield;
 pub use crate::endf_8_parent_independent_yields::u232::thermal_energy::u232_thermal_fission_yield;
 pub use crate::endf_8_parent_independent_yields::pu238::pu238_fast_fission_yield;
 pub use crate::endf_8_parent_independent_yields::np238::np238_fast_fission_yield;
+
+pub use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
