@@ -8,6 +8,9 @@ use uom::si::{f64::*, ratio::ratio};
 pub enum Nuclide {
     // exotic nuclides during fission 
     // also nuclear isomers
+    // probably want to add documentation for all nuclides, their half lives and such, plus 
+    // isomer data, based on nndc or wallet cards or something. 
+    // This is important to organise the data well.
     Ti66,
     V68,
     V69,
