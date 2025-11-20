@@ -1798,7 +1798,7 @@ impl Nuclide {
         distribution_yield_116 += 
             fission_yield_linear_interpolation(
                 *self, 
-                Nuclide::In116n, 
+                Nuclide::In116m1, 
                 neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_116 += 
@@ -2044,7 +2044,7 @@ impl Nuclide {
         distribution_yield_118 += 
             fission_yield_linear_interpolation(
                 *self, 
-                Nuclide::In118n, 
+                Nuclide::In118m1, 
                 neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_118 += 
@@ -2286,7 +2286,7 @@ impl Nuclide {
         distribution_yield_120 += 
             fission_yield_linear_interpolation(
                 *self, 
-                Nuclide::In120n, 
+                Nuclide::In120m1, 
                 neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_120 += 
@@ -2528,7 +2528,7 @@ impl Nuclide {
         distribution_yield_122 += 
             fission_yield_linear_interpolation(
                 *self, 
-                Nuclide::In122n, 
+                Nuclide::In122m1, 
                 neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_122 += 
@@ -3485,7 +3485,7 @@ impl Nuclide {
         distribution_yield_130 += 
             fission_yield_linear_interpolation(
                 *self, 
-                Nuclide::In130n, 
+                Nuclide::In130m1, 
                 neutron_energy).get::<ratio>();
         // Z=50 Tin
         distribution_yield_130 += 
