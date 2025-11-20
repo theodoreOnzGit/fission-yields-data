@@ -3734,3 +3734,14 @@ impl Nuclide {
     }
 
 }
+
+/// returns mass excess for all known isotopes
+/// (under construction)
+pub mod mass_excess;
+/// returns zaid number for all known isotopes,
+/// zaid number is an integer for identifying isotopes
+/// this is usually, 
+/// 1000z+a
+/// where z is the proton number, a is the nucleon number
+/// (under construction)
+pub mod zaid_number;
