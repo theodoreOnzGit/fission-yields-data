@@ -1998,7 +1998,7 @@ impl Nuclide {
         distribution_yield_152 += 
             fission_yield_linear_interpolation(
                 *self, 
-                Nuclide::Pm152n, 
+                Nuclide::Pm152m1, 
                 neutron_energy).get::<ratio>();
         // Z=62 Samarium
         distribution_yield_152 += 
@@ -2020,7 +2020,7 @@ impl Nuclide {
         distribution_yield_152 += 
             fission_yield_linear_interpolation(
                 *self, 
-                Nuclide::Eu152n, 
+                Nuclide::Eu152m1, 
                 neutron_energy).get::<ratio>();
         // Z=64 Gadolinium
         distribution_yield_152 += 

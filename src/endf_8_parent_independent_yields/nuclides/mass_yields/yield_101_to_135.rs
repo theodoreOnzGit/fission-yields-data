@@ -2773,7 +2773,7 @@ impl Nuclide {
         distribution_yield_124 += 
             fission_yield_linear_interpolation(
                 *self, 
-                Nuclide::Sb124n, 
+                Nuclide::Sb124m1, 
                 neutron_energy).get::<ratio>();
         // Z=52 Tellurium
         distribution_yield_124 += 
@@ -3012,7 +3012,7 @@ impl Nuclide {
         distribution_yield_126 += 
             fission_yield_linear_interpolation(
                 *self, 
-                Nuclide::Sb126n, 
+                Nuclide::Sb126m1, 
                 neutron_energy).get::<ratio>();
         // Z=52 Tellurium
         distribution_yield_126 += 
