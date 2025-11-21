@@ -4201,4 +4201,12 @@ impl Nuclide {
         return (z,a);
     }
 
+    /// the zaid number is just a naming convention for the isotopes
+    /// this is 1000*z + a 
+    pub fn get_zaid_number(&self) -> u32 {
+        let (z,a) = self.get_z_a();
+
+        return 1000*z + a;
+    }
+
 }
