@@ -4203,6 +4203,9 @@ impl Nuclide {
 
     /// the zaid number is just a naming convention for the isotopes
     /// this is 1000*z + a 
+    ///
+    /// excited states have the same zaid identifier as the ground state 
+    /// in this case
     pub fn get_zaid_number(&self) -> u32 {
         let (z,a) = self.get_z_a();
 
