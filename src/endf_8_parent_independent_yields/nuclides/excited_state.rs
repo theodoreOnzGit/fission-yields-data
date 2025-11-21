@@ -7,10 +7,14 @@ use super::Nuclide::*;
 /// m1 (2nd excited state, sometimes denoted n in the fission yield database in JANIS)
 /// m2 (3rd excited state)
 pub enum ExcitedState {
-    /// 
+    /// Ground state
+    /// not excited
     GroundState,
+    /// First excited state
     m,
+    /// Second excited state (sometimes denoted n)
     m1,
+    /// Third excited state
     m2,
 }
 
