@@ -6,6 +6,7 @@ use super::Nuclide::*;
 /// m (1st excited state)
 /// m1 (2nd excited state, sometimes denoted n in the fission yield database in JANIS)
 /// m2 (3rd excited state)
+#[allow(non_camel_case_types)]
 pub enum ExcitedState {
     /// Ground state
     /// not excited

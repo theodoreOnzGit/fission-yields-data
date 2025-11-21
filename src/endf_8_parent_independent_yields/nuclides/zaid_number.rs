@@ -4204,12 +4204,28 @@ impl Nuclide {
     /// the zaid number is just a naming convention for the isotopes
     /// this is 1000*z + a 
     ///
-    /// excited states have the same zaid identifier as the ground state 
-    /// in this case
+    /// excited states have the different zaid identifier as the ground state 
+    ///
+    /// for excited state, the formula is 
+    ///
+    /// ZAID = z * 1000 + a + s * 400
+    /// https://mcnp.lanl.gov/pdf_files/TechReport_2023_LANL_LA-UR-23-30559_Kleedtke.pdf
+    /// this is mcnp convention
+    /// 
     pub fn get_zaid_number(&self) -> u32 {
         let (z,a) = self.get_z_a();
+        let excited_state = self.get_exicted_state();
 
-        return 1000*z + a;
+        // based on excited state, change the zaid number 
+
+        let excited_state_modifier: u32 = match excited_state {
+            super::excited_state::ExcitedState::GroundState => 0,
+            super::excited_state::ExcitedState::m => 400,
+            super::excited_state::ExcitedState::m1 => 800,
+            super::excited_state::ExcitedState::m2 => 1200,
+        };
+
+        return 1000*z + a + excited_state_modifier;
     }
 
 }
