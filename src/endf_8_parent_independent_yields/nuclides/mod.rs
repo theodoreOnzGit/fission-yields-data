@@ -4303,3 +4303,12 @@ pub mod mass_excess;
 /// where z is the proton number, a is the nucleon number
 /// (under construction)
 pub mod zaid_number;
+
+/// returns excited state for each nuclide 
+/// excited state is an enum here 
+/// we have 
+/// ground,
+/// m (1st excited state)
+/// m1 (2nd excited state, sometimes denoted n in the fission yield database in JANIS)
+/// m2 (3rd excited state)
+pub mod excited_state;
