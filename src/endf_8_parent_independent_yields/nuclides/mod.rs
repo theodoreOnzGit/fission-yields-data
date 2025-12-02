@@ -4312,3 +4312,70 @@ pub mod zaid_number;
 /// m1 (2nd excited state, sometimes denoted n in the fission yield database in JANIS)
 /// m2 (3rd excited state)
 pub mod excited_state;
+
+
+// notes for decay data,
+//
+// each decay data has multiple types of decay per nuclide
+// this includes beta minus + other particle or beta plus/Electron capture 
+//
+// what data structure is best?
+// is it 
+//
+// vec![(DecayType enum, HalfLife enum, BranchingRatio)]
+//
+// right if this is so, how do we construct vectors for each nuclide 
+// to tag the correct decay vector? esp for multiple branching ratios
+//
+//
+//
+// issues:
+// - in nndc data structure, some branching ratios don't add to 100 
+// - some branching ratios are missing 
+// - some half life data is missing 
+//
+// perhaps: just capture the data raw from nndc in some data structure 
+// then decide what to do with it later 
+//
+// I want to also obtain resultant nuclides emerging from decay, but perhaps 
+// not yet. 
+//
+// Next issue, how to tag isomers?
+//
+// I need to have nuclide type (za) plus mass excess and tag to specific 
+// nuclide 
+//
+// having a nuclide za number plus mass excess, I should be able to type 
+// to a specific nuclide 
+//
+//
+// And then how to automate the construction of vector for decay?
+//
+// I have an entire vector entry (csv file) 
+//
+// shall I hide it under a struct?
+// shall I hard code for each isotope/isomer? (probably not desirable)
+// shall I hard code for each isotope/isomer using libreoffice filters? 
+//
+//
+// hard coding has speed gains, but quick and dirty may be better
+//
+// - just construct dynamic vectors/decay chains.
+// - when cycling through entire 6000 line decay data vector
+// - check if it matches z,n, mass excess, 
+// - if matches, construct new vector (add entry to new vector)
+// - if resultant vector is empty after going through all 6000 lines, then 
+// a STABLE kind of enum should be given. (kind of computationally heavy for 
+// stable nuclides), but will beat hard coding.
+//
+// Or maybe soft code can help iwth hard coding... 
+//
+// constructing dynamic vectors may not be the fastest, but it gets 
+// the job done.
+//
+// Moreover, constructing dynamic vectors is important for constructing 
+// matrices (eventually) when it comes to perhaps truncating decay chains 
+// by timestep. For a 30 min timestep, I may want to skip constructing 
+// decay chains for decays with 1 min half life for example. How can I then 
+// skip?
+//
