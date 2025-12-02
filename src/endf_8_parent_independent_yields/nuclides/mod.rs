@@ -4379,3 +4379,9 @@ pub mod excited_state;
 // decay chains for decays with 1 min half life for example. How can I then 
 // skip?
 //
+// A more reasonable approach is to segement decay data by proton number 
+// then we have about 119 vectors to obtain by default. 
+// From there, we can cycle through the neutron number of this vector,
+// then return stable if the isotopes cannot be found to have a decay chain.
+// 
+//
