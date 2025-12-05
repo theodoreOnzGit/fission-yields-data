@@ -4220,10 +4220,10 @@ impl Nuclide {
         // based on excited state, change the zaid number 
 
         let excited_state_modifier: u32 = match excited_state {
-            super::excited_state::ExcitedState::GroundState => 0,
-            super::excited_state::ExcitedState::m => 400,
-            super::excited_state::ExcitedState::m1 => 800,
-            super::excited_state::ExcitedState::m2 => 1200,
+            super::excited_state::ExcitationState::GroundState => 0,
+            super::excited_state::ExcitationState::m => 400,
+            super::excited_state::ExcitationState::m1 => 800,
+            super::excited_state::ExcitationState::m2 => 1200,
         };
 
         return 1000*z + a + excited_state_modifier;
