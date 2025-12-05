@@ -5,7 +5,7 @@ use uom::si::{f64::*, ratio::ratio};
 /// library
 #[allow(non_snake_case)]
 #[allow(missing_docs)]
-#[derive(Debug,Clone,Copy)]
+#[derive(PartialEq,Eq,Debug,Clone,Copy)]
 pub enum Nuclide {
     // exotic nuclides during fission 
     // also nuclear isomers
