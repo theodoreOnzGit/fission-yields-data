@@ -4136,7 +4136,7 @@ pub fn test_zaid_number_to_nuclide(){
 
     fn assert_zaid_number_to_nuclide(reference_nuclide: Nuclide, reference_zaid: u32){
 
-        let test_nuclide = Nuclide::try_zaid_to_nuclide(reference_zaid).unwrap();
+        let test_nuclide = Nuclide::try_get_nuclide_from_zaid(reference_zaid).unwrap();
 
         assert_eq!(test_nuclide,reference_nuclide);
 

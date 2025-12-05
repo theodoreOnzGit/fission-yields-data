@@ -1,11 +1,12 @@
 use crate::prelude::Nuclide;
+use super::super::excited_state::ExcitedState;
 
 
 impl Nuclide {
 
     /// converts a zaid code to a nuclide 
     /// not all numbers will match though!
-    pub fn try_zaid_to_nuclide(zaid: u32) -> Option<Nuclide>{
+    pub fn try_get_nuclide_from_zaid(zaid: u32) -> Option<Nuclide>{
 
         let nuclide_option = match zaid {
             1 => Some(Nuclide::Neutron),
@@ -4120,6 +4121,26 @@ impl Nuclide {
         };
 
         return nuclide_option;
+
+    }
+
+    /// get nuclide from (z,a) and excited state 
+    pub fn try_get_nuclide_from_z_a_and_energy_state(z: u32, 
+        a: u32, excited_state: ExcitedState) -> Option<Nuclide>{
+
+        let excited_state_modifier: u32 = match excited_state {
+            ExcitedState::GroundState => 0,
+            ExcitedState::m => 400,
+            ExcitedState::m1 => 800,
+            ExcitedState::m2 => 1200,
+        };
+
+        let zaid_number = 1000*z + a + excited_state_modifier;
+
+        let nuclide_option = Self::try_get_nuclide_from_zaid(zaid_number);
+
+        return nuclide_option;
+
 
     }
 }
