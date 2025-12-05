@@ -4234,3 +4234,6 @@ impl Nuclide {
 /// verification tests for zaid code
 #[cfg(test)]
 pub mod test;
+
+/// allows conversion of a zaid number to nuclide
+pub mod zaid_number_to_nuclide;
