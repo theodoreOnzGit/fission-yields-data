@@ -4368,7 +4368,7 @@ pub mod excited_state;
 // a STABLE kind of enum should be given. (kind of computationally heavy for 
 // stable nuclides), but will beat hard coding.
 //
-// Or maybe soft code can help iwth hard coding... 
+// Or maybe soft code can help with hard coding... 
 //
 // constructing dynamic vectors may not be the fastest, but it gets 
 // the job done.
