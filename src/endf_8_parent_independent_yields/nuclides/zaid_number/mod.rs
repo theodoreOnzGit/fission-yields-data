@@ -4230,3 +4230,7 @@ impl Nuclide {
     }
 
 }
+
+/// verification tests for zaid code
+#[cfg(test)]
+pub mod test;
