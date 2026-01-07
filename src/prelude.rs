@@ -1,6 +1,7 @@
 use uom::si::f64::*;
 
 pub use crate::endf_8_parent_independent_yields::nuclides::Nuclide;
+pub use crate::endf_8_parent_independent_yields::nuclides::excited_state::ExcitationState;
 use crate::endf_8_parent_independent_yields::energy_interpolation::linear_linear_energy_interpolation;
 
 /// obtains fission yield for of a given nuclide (daughter) 

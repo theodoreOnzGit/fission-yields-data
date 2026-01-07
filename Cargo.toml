@@ -1,6 +1,6 @@
 [package]
 name = "fission-yields-data"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2024"
 
 license = "GPL-3.0"
@@ -15,4 +15,12 @@ uom = "0.37.0"
 
 [dev-dependencies]
 approx = "0.5.1"
+serde = {version = "1.0.228",  features = ["derive"]}
+serde-xml-rs = "0.8.2"
 
+[[example]]
+name = "serde_experiment"
+
+
+[[example]]
+name = "serde_chatgpt_5"

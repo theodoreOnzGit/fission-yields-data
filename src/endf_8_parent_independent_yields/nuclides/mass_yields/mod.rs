@@ -21,10 +21,11 @@ pub mod yield_101_to_135;
 /// contains functions for masses 136 to 172
 pub mod yield_136_to_172;
 
-/// generates a yield vector for all nuclides with mass 
-/// 66 to 172 
 impl Nuclide {
 
+    /// generates a fission yield vector for all nuclides with mass 
+    /// 66 to 172 
+    /// assuming neutron comes in to cause fission
     pub fn get_mass_yield_vector(&self, neutron_energy: Energy)
         -> Vec<(u32,f64)>
     {
