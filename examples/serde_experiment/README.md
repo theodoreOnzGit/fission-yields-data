@@ -289,8 +289,213 @@ where
 ```
 At the back of things, it looks as if it is a custom match statement.
 
+```
+use std::convert::TryFrom;
 
+#[derive(Debug, PartialEq)]
+enum ReactionType {
+    N2N,   // (n,2n)
+    N3N,   // (n,3n)
+    NGamma, // (n,gamma)
+    NP,    // (n,p)
+    NA,    // (n,a)
+}
 
+#[derive(Debug)]
+struct ReactionParseError;
 
+impl TryFrom<&str> for ReactionType {
+    type Error = ReactionParseError;
+
+    fn try_from(s: &str) -> Result<Self, Self::Error> {
+        match s {
+            "(n,2n)"   => Ok(ReactionType::N2N),
+            "(n,3n)"   => Ok(ReactionType::N3N),
+            "(n,gamma)"=> Ok(ReactionType::NGamma),
+            "(n,p)"    => Ok(ReactionType::NP),
+            "(n,a)"    => Ok(ReactionType::NA),
+            _ => Err(ReactionParseError),
+        }
+    }
+}
+
+fn main() {
+    let rt = ReactionType::try_from("(n,gamma)").unwrap();
+    println!("{:?}", rt);
+}
+```
+
+Basically, my use case from this, is to obtain a nuclide from this 
+crate, and be able to obtain the reaction and decays.
+
+What I could do is create a NuclideDecayData class or struct, 
+the user supplies the enum, and this enum can convert into 
+the NuclideDecayData. 
+
+The NuclideDecayData could contain this enum. This enum when matched,
+can then trigger code which runs to find the correct decay data 
+from the correct nuclide. 
+
+Now, problem is, there are literally 3000 plus nuclides to do. Are 
+we then going to arrange the nuclides all the way? Perhaps we 
+have to. 
+
+We could parse the nuclides and match the enum. With every working 
+day we could do around 10 elements. In a week or two, this can be 
+done. Complete with conversion.
+
+## uom converison
+How is this conversion done?
+
+chatgpt 5 again provides some information:
+
+```
+use serde::{Deserialize, Deserializer};
+use serde_xml_rs::from_str;
+use uom::si::f64::{Energy, Time};
+use uom::si::time::second;
+use uom::si::energy::joule;
+
+// If your schema guarantees half_life is in seconds, and decay_energy is in eV,
+// you can use fixed-unit deserializers like these:
+
+fn de_time_seconds<'de, D>(de: D) -> Result<Time, D::Error>
+where
+    D: Deserializer<'de>,
+{
+    let v = f64::deserialize(de)?;
+    Ok(Time::new::<second>(v))
+}
+
+// If you prefer to treat decay_energy as electronvolts (eV), but store internally in Joules,
+// convert eV -> J using the exact factor 1 eV = 1.602176634e-19 J.
+const EV_TO_J: f64 = 1.602_176_634e-19;
+
+fn de_energy_electronvolts<'de, D>(de: D) -> Result<Energy, D::Error>
+where
+    D: Deserializer<'de>,
+{
+    let ev = f64::deserialize(de)?;
+    Ok(Energy::new::<joule>(ev * EV_TO_J))
+}
+
+// Example of a whitespace-separated list in <parameters> that you want as Vec<Energy>
+// (assuming those numbers are in eV; adapt as needed).
+fn de_energy_list_electronvolts<'de, D>(de: D) -> Result<Vec<Energy>, D::Error>
+where
+    D: Deserializer<'de>,
+{
+    let s = String::deserialize(de)?;
+    s.split_whitespace()
+        .map(|tok| {
+            tok.parse::<f64>()
+                .map(|ev| Energy::new::<joule>(ev * EV_TO_J))
+                .map_err(serde::de::Error::custom)
+        })
+        .collect()
+}
+
+// If the XML provides units explicitly, e.g. <value unit="s">237513.6</value>,
+// you can capture both and normalize to a canonical unit:
+
+#[derive(Debug, Deserialize)]
+struct XmlScalarWithUnit {
+    #[serde(rename = "$value")]
+    value: f64,
+    #[serde(rename = "@unit")]
+    unit: String,
+}
+
+impl XmlScalarWithUnit {
+    fn into_time(self) -> Result<Time, String> {
+        match self.unit.as_str() {
+            "s" | "sec" | "seconds" => Ok(Time::new::<second>(self.value)),
+            "ms" => Ok(Time::new::<second>(self.value / 1_000.0)),
+            "us" | "µs" => Ok(Time::new::<second>(self.value / 1_000_000.0)),
+            // Add more mappings as needed
+            other => Err(format!("unsupported time unit: {other}")),
+        }
+    }
+
+    fn into_energy(self) -> Result<Energy, String> {
+        match self.unit.as_str() {
+            "J" | "joule" | "joules" => Ok(Energy::new::<joule>(self.value)),
+            "eV" => Ok(Energy::new::<joule>(self.value * EV_TO_J)),
+            "keV" => Ok(Energy::new::<joule>(self.value * 1.0e3 * EV_TO_J)),
+            "MeV" => Ok(Energy::new::<joule>(self.value * 1.0e6 * EV_TO_J)),
+            other => Err(format!("unsupported energy unit: {other}")),
+        }
+    }
+}
+
+// Your data model; adjust members to your actual XML.
+// This shows both the fixed-unit approach (attributes directly into Quantity)
+// and a unit-attribute element variant.
+
+#[derive(Debug, Deserialize)]
+#[serde(rename = "nuclide")]
+struct Nuclide {
+    #[serde(rename = "@name")]
+    name: String,
+
+    // Fixed-unit attributes: half_life (s), decay_energy (eV)
+    #[serde(rename = "@half_life", deserialize_with = "de_time_seconds")]
+    half_life: Time,
+
+    #[serde(rename = "@decay_energy", deserialize_with = "de_energy_electronvolts")]
+    decay_energy: Energy,
+
+    #[serde(default)]
+    source: Vec<Source>,
+}
+
+#[derive(Debug, Deserialize)]
+struct Source {
+    #[serde(rename = "@type")]
+    source_type: String,
+    #[serde(rename = "@particle")]
+    particle: String,
+
+    // If the parameters are energies in eV, decode as Vec<Energy>
+    #[serde(rename = "parameters")]
+    parameters: Parameters,
+}
+
+#[derive(Debug, Deserialize)]
+struct Parameters {
+    // Text content to list of quantities
+    #[serde(rename = "$value", deserialize_with = "de_energy_list_electronvolts")]
+    values: Vec<Energy>,
+}
+
+// Demonstration: both fixed-unit attributes and unit-attribute element parsing.
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let xml = r#"
+<nuclide name="Mo99" half_life="237513.6" decay_energy="543174.1000000001">
+  <source type="discrete" particle="photon">
+    <parameters>2162.542 2414.132 2548.688</parameters>
+  </source>
+</nuclide>
+"#;
+
+    let n: Nuclide = from_str(xml)?;
+    println!("Nuclide: {}", n.name);
+    println!("Half-life (s): {}", n.half_life.get::<second>());
+    println!("Decay energy (J): {}", n.decay_energy.get::<joule>());
+    if let Some(first) = n.source.first() {
+        if let Some(e) = first.parameters.values.first() {
+            println!("First parameter energy (J): {}", e.get::<joule>());
+        }
+    }
+
+    // Example parsing of value with a unit attribute:
+    let xml_with_units = r#"<value unit="MeV">1.25</value>"#;
+    let v: XmlScalarWithUnit = from_str(xml_with_units)?;
+    let energy_mev = v.into_energy().map_err(|e| format!("unit error: {e}"))?;
+    println!("1.25 MeV in joules = {}", energy_mev.get::<joule>());
+
+    Ok(())
+}
+```
 
 
