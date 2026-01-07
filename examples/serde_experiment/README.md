@@ -498,4 +498,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
+Of course well and good now, I just hope decay time in half life isn't 
+in energy units. That would complicate things.
 
+Okay, so basically, for the de-serialiser, we use something custom 
+in order to convert the float into uom. And also, we convert the 
+string to enum using a custom deserialiser.
