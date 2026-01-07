@@ -20,3 +20,7 @@ serde-xml-rs = "0.8.2"
 
 [[example]]
 name = "serde_experiment"
+
+
+[[example]]
+name = "serde_chatgpt_5"
