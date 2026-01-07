@@ -208,7 +208,7 @@ struct ReactionData {
 Basically, in the vibe coding process, the raw chatgpt 5 version 
 has an error. But the code is useful enough to be debugged in 
 a few steps. Thus saving drafting efforts. Good to be learning from 
-interns and juniors like ZhiZheng who know how to use this stuff!
+interns and juniors like ZZ who know how to use this stuff!
 
 As far as i can see, the serde rename part takes the name of the 
 data type, for example "reaction". I can convert it into a Rust 
