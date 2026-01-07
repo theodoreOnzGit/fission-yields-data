@@ -205,9 +205,89 @@ struct ReactionData {
 }
 ```
 
+Basically, in the vibe coding process, the raw chatgpt 5 version 
+has an error. But the code is useful enough to be debugged in 
+a few steps. Thus saving drafting efforts. Good to be learning from 
+interns and juniors like ZhiZheng who know how to use this stuff!
+
+As far as i can see, the serde rename part takes the name of the 
+data type, for example "reaction". I can convert it into a Rust 
+struct called ReactionData as shown in the above code.
+
+Okay great, I can convert the xml code to strings and floats.
+
+Now, tricky thing here is i want to convert the floats to enums. How?
+
+From chatgpt 5:
+```
+use serde::Deserialize;
+
+#[derive(Debug, Deserialize, PartialEq)]
+enum DecayType {
+    #[serde(rename = "beta-")]
+    BetaMinus,
+    #[serde(rename = "beta+")]
+    BetaPlus,
+    #[serde(rename = "alpha")]
+    Alpha,
+
+    // Optional: accept multiple spellings
+    #[serde(alias = "γ")]
+    #[serde(alias = "gamma")]
+    Gamma,
+}
+```
+
+For unknowns:
+
+```
+#[derive(Debug, Deserialize, PartialEq)]
+
+enum DecayType {
+
+    #[serde(rename = "beta-")]
+    BetaMinus,
+
+    #[serde(rename = "beta+")]
+    BetaPlus,
+
+    #[serde(rename = "alpha")]
+    Alpha,
+
+    #[serde(other)]
+    Unknown, // any other string maps here
+
+}
+```
+
+For Serde, we can also use a custom deserialiser:
 
 
+```
+use serde::{Deserialize, Deserializer};
 
+#[derive(Debug, PartialEq)]
+enum DecayType {
+    BetaMinus,
+    BetaPlus,
+    Alpha,
+    Other(String),
+}
+
+fn de_decay_type<'de, D>(de: D) -> Result<DecayType, D::Error>
+where
+    D: Deserializer<'de>,
+{
+    let s = String::deserialize(de)?;
+    Ok(match s.as_str() {
+        "beta-" => DecayType::BetaMinus,
+        "beta+" => DecayType::BetaPlus,
+        "alpha" => DecayType::Alpha,
+        _ => DecayType::Other(s),
+    })
+}
+```
+At the back of things, it looks as if it is a custom match statement.
 
 
 
