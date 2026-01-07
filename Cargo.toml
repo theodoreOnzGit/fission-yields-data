@@ -16,3 +16,5 @@ uom = "0.37.0"
 [dev-dependencies]
 approx = "0.5.1"
 
+[[example]]
+name = "serde_experiment"
