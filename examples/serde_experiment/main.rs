@@ -29,7 +29,7 @@ pub struct NuclideDepletionData {
     name: String,
 
     #[serde(rename = "@half_life")]
-    half_life: f64,
+    half_life_seconds: f64,
 
     #[serde(rename = "@decay_modes")]
     decay_modes: u32,
@@ -70,7 +70,7 @@ struct ReactionData {
     reaction_type: String,
 
     #[serde(rename = "@Q")]
-    q_value: f64,
+    q_value_electronvolt: f64,
 
     #[serde(rename = "@target")]
     target: String,
