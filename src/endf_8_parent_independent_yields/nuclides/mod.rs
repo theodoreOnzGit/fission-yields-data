@@ -1,11 +1,12 @@
 use crate::prelude::fission_yield_linear_interpolation;
+use strum_macros::EnumString;
 use uom::si::{f64::*, ratio::ratio};
 
 /// Provides an enum of all nuclides within the 
 /// library
 #[allow(non_snake_case)]
 #[allow(missing_docs)]
-#[derive(PartialEq,Eq,Debug,Clone,Copy)]
+#[derive(PartialEq,Eq,Debug,Clone,Copy,EnumString)]
 pub enum Nuclide {
     // exotic nuclides during fission 
     // also nuclear isomers
@@ -4385,3 +4386,8 @@ pub mod excited_state;
 // then return stable if the isotopes cannot be found to have a decay chain.
 // 
 //
+//
+
+
+/// converts strings into enums
+pub mod string_conversion;

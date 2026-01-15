@@ -33,6 +33,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # patch notes 
 
+v0.1.2
+
+Derived EnumString to help the convert enums matching that into strings.
+
 v0.1.1
 
 fixed that the Nuclide class was not publicly available
