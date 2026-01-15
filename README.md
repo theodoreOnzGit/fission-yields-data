@@ -33,9 +33,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # patch notes 
 
-v0.1.2
+v0.1.3
 
 Derived EnumString to help the convert enums matching that into strings.
+
+v0.1.2
+
+ensured that Nuclide is compatible with Serde
 
 v0.1.1
 
