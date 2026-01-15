@@ -33,6 +33,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # patch notes 
 
+v0.1.4
+
+Included some isomers in the nuclide databank for more complete version.
+
 v0.1.3
 
 Derived EnumString to help the convert enums matching that into strings.

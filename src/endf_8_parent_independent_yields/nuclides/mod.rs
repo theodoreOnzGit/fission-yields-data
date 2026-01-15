@@ -1362,6 +1362,7 @@ pub enum Nuclide {
     Ru109,
     Ru108,
     Ru103,
+    Ru103m,
     Ru94,
     Ru100,
     Ru99,
