@@ -12,6 +12,8 @@ categories = ["science"]
 
 [dependencies]
 uom = "0.37.0"
+strum = "0.26"
+strum_macros = "0.26"
 
 [dev-dependencies]
 approx = "0.5.1"
