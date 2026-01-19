@@ -8252,6 +8252,9 @@ pub fn test_zaid_number_to_nuclide(){
         (Nuclide::Ts294,117294),
         (Nuclide::Og294,118294),
 
+        // missing nuclies for endf 8
+        // need to assert zaid number
+
     ];
 
     for (test_nuclide, test_zaid) in test_vector.iter(){
@@ -8259,4 +8262,238 @@ pub fn test_zaid_number_to_nuclide(){
         assert_zaid_number_to_nuclide(*test_nuclide, *test_zaid);
     }
 
+}
+
+
+// vibe coded
+#[cfg(test)]
+mod tests {
+    use super::Nuclide::*;
+    use super::Nuclide;
+
+    #[test]
+    fn test_proton_numbers_for_all_nuclides() {
+        // Replace `proton_number` with your actual function that returns Z for a Nuclide.
+        // e.g., fn proton_number(n: Nuclide) -> u16 { ... }
+
+        let cases: &[(Nuclide, Nuclide)] = &[
+            // Ru, Na, K, Rb, Cs, Fr
+            (Ru103m, Ru103),
+            (Na24m, Na21),
+            (Na36, Na21),
+            (K32, K40),
+            (K33, K40),
+            (K34, K40),
+            (Rb71, Rb86),
+            (Cs125m, Cs137),
+            (Cs144m, Cs137),
+            (Fr214m, Fr214),
+            (Fr218m, Fr214),
+
+            // Be, Mg, Ba, Ra, Ca
+            (Be5, Be10),
+            (Mg39, Mg40),
+            (Ba130m, Ba137),
+            (Ra203m, Ra204),
+            (Ra207m, Ra204),
+            (Ra213m, Ra204),
+            (Ca34, Ca40),
+
+            // Xe, Rn
+            (Xe132m, Xe137),
+            (Rn197m, Rn226),
+
+            // Br, At
+            (Br67, Br70),
+            (At196m, At197),
+
+            // O, Po
+            (O27, O16),
+            (Po191m, Po226),
+            (Po205m1, Po226),
+            (Po205m, Po226),
+
+            // As, Sb, Bi, P, N
+            (As60, As70),
+            (As61, As70),
+            (As62, As70),
+            (Sb103, Sb105),
+            (Bi184m, Bi200),
+            (Bi186m, Bi200),
+            (Bi187m, Bi200),
+            (Bi189m, Bi200),
+            (Bi204m1, Bi200),
+            (Bi204m, Bi200),
+            (Bi208m, Bi200),
+            (P24, P32),
+            (N25, N16),
+
+            // Zn, Cu, Co, V, Mn, Ti, Sc, Y, Nb, Tc, Pd, Ag
+            (Zn61m1, Zn60),
+            (Zn61m, Zn60),
+            (Zn73m1, Zn60),
+            (Zn73m, Zn60),
+            (Cu52, Cu57),
+            (Cu76m, Cu57),
+            (Co49, Co60),
+            (V40, V60),
+            (V41, V60),
+            (Mn45, Mn60),
+            (V46m, V46),
+            (Ti38, Ti40),
+            (Sc36, Sc40),
+            (Sc37, Sc40),
+            (Sc38, Sc40),
+            (Y88m, Y90),
+            (Y88m1, Y90),
+            (Nb90m1, Nb90),
+            (Tc86m, Tc99),
+            (Tc117m, Tc99),
+            (Pd117m, Pd120),
+            (Ag95m, Ag94),
+            (Ag95m1, Ag94),
+            (Ag95m2, Ag94),
+            (Ag114m, Ag94),
+
+            // Ta, W, Re, Ir, Pt, Au, Hg
+            (Ta157m, Ta171),
+            (Ta157m1, Ta171),
+            (Ta158m, Ta171),
+            (Ta176m, Ta171),
+            (Ta176m1, Ta171),
+            (Ta179m, Ta171),
+            (Ta179m1, Ta171),
+            (Ta185m, Ta171),
+            (W180m, W191),
+            (W186m, W191),
+            (W190m, W191),
+            (Re183m, Re182),
+            (Ir164m, Ir180),
+            (Ir188m, Ir180),
+            (Ir189m, Ir180),
+            (Ir189m1, Ir180),
+            (Ir194m1, Ir180),
+            (Pt184m, Pt184),
+            (Au169, Au170),
+            (Au192m1, Au170),
+            (Hg205m, Hg202),
+
+            // La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Yb, Lu
+            (La117m, La120),
+            (La118, La120),
+            (La119, La120),
+            (Ce119, Ce121),
+            (Ce120, Ce121),
+            (Ce132m, Ce121),
+            (Pr122, Pr124),
+            (Pr123, Pr124),
+            (Nd124, Nd127),
+            (Pm126, Pm130),
+            (Pm127, Pm130),
+            (Pm138m, Pm130),
+            (Pm142m, Pm130),
+            (Sm128, Sm144),
+            (Sm143m1, Sm144),
+            (Sm153m, Sm144),
+            (Eu133, Eu140),
+            (Eu136m1, Eu140),
+            (Gd155m, Gd155),
+            (Tb136, Tb140),
+            (Tb137, Tb140),
+            (Tb141m, Tb140),
+            (Tb145m, Tb140),
+            (Tb146m1, Tb140),
+            (Dy138, Dy155),
+            (Dy157m, Dy155),
+            (Ho148m1, Ho150),
+            (Ho155m, Ho150),
+            (Er157m, Er170),
+            (Yb148, Yb172),
+            (Yb171m, Yb172),
+            (Yb175m, Yb172),
+            (Lu153m, Lu170),
+            (Lu155m1, Lu170),
+            (Lu161m, Lu170),
+            (Lu177m1, Lu170),
+            (Lu179m, Lu170),
+            (Lu180m, Lu170),
+
+            // B, Ga, In, Tl
+            (B6, B10),
+            (Ga56, Ga70),
+            (Ga57, Ga70),
+            (Ga58, Ga70),
+            (In114m1, In120),
+            (Tl179m, Tl200),
+            (Tl181m, Tl200),
+            (Tl183m, Tl200),
+            (Tl188m1, Tl200),
+            (Tl198m1, Tl200),
+            (Tl199m, Tl200),
+            (Tl200m, Tl200),
+            (Tl201m, Tl200),
+
+            // Actinides and beyond
+            (Ac208m, Ac227),
+            (Ac216m, Ac227),
+            (Pa217m, Pa233),
+            (Pa240, Pa233),
+            (U220, U235),
+            (Am231, Am240),
+            (Am242m1, Am240),
+            (Am248, Am240),
+            (Am249, Am240),
+            (Cm244m, Cm244),
+            (Bk235, Bk240),
+            (Bk254, Bk240),
+            (Es247m, Es240),
+            (Es256, Es240),
+            (Es258, Es240),
+            (Fm260, Fm241),
+            (Md245m, Md261),
+            (Md261, Md261),
+            (No261, No249),
+            (Lr263, Lr251),
+
+            // Carbon group
+            (C21, C12),
+            (Ge58, Ge70),
+            (Pb181m, Pb206),
+            (Pb205m, Pb206),
+
+            // Heavier than actinides group
+            (Rf264, Rf255),
+            (Db264, Db262),
+            (Db265, Db262),
+            (Bh263, Bh260),
+            (Bh269, Bh260),
+            (Hs265m, Hs265),
+            (Mt265, Mt266),
+            (Mt266m, Mt266),
+            (Mt267, Mt266),
+            (Mt269, Mt266),
+            (Mt271, Mt266),
+            (Mt273, Mt266),
+            (Ds268, Ds270),
+            (Ds270m, Ds270),
+            (Ds272, Ds270),
+        ];
+
+        for (nuclide, reference_nuclide) in cases {
+
+            fn proton_number(nuclide: &Nuclide,) -> u16 {
+
+                let (z,_a) = nuclide.get_z_a();
+
+                return z.try_into().unwrap();
+
+            }
+            assert_eq!(
+                proton_number(nuclide),
+                proton_number(reference_nuclide),
+                "Incorrect proton number Z for {:?}",
+                nuclide
+            );
+        }
+    }
 }

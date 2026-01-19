@@ -4114,6 +4114,8 @@ impl Nuclide {
             Ts293 => (117,293),
             Ts294 => (117,294),
             Og294 => (118,294),
+
+            
             Ti66 => (22,66),
             V68 => (23,68),
             V69 => (23,69),
@@ -4192,6 +4194,8 @@ impl Nuclide {
             Eu171 => (63,171),
             Eu172 => (63,172),
             Gd153m => (64,153),
+            // missing nuclides from endf8 decay data, adding in 
+            // yet to test
             Ru103m  => (44, 103),
             Na24m  => (11, 24),
             Na36  => (11, 36),
