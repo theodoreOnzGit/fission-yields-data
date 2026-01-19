@@ -3637,7 +3637,6 @@ pub fn u238_thermal_fission_yield(nuc: Nuclide) -> Ratio {
         Ts293 => 0.0,
         Ts294 => 0.0,
         Og294 => 0.0,
-
         F26m => 0.0,
         Al34m => 0.0,
         Al24m => 0.0,
@@ -4194,6 +4193,9 @@ pub fn u238_thermal_fission_yield(nuc: Nuclide) -> Ratio {
         Mt276m => 0.0,
         Ds271m => 0.0,
         Ds279m => 0.0,
+        // missing yields for other nuclides,
+        // catch all is zero
+        _ => 0.0,
     };
 
     return Ratio::new::<ratio>(yield_float);

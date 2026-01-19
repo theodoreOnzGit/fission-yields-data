@@ -4193,6 +4193,9 @@ pub fn pu241_thermal_fission_yield(nuc: Nuclide) -> Ratio {
         Mt276m => 0.0,
         Ds271m => 0.0,
         Ds279m => 0.0,
+        // missing yields for other nuclides,
+        // catch all is zero
+        _ => 0.0,
     };
 
     return Ratio::new::<ratio>(yield_float);
