@@ -4361,7 +4361,6 @@ pub enum Nuclide {
     Bk235,
     Bk254,
     Es247m,
-    Es256,
     Es258,
     Fm260,
     Md245m,
