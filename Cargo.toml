@@ -9,9 +9,17 @@ homepage = "https://github.com/theodoreOnzGit/fission-yields-data"
 repository ="https://github.com/theodoreOnzGit/fission-yields-data"
 readme = "README.md"
 categories = ["science"]
+# The two OpenMC depletion-chain XMLs (~27 MB each) are kept in the repo but
+# excluded from the published crate (crates.io limit 10 MB). This key must sit
+# in [package]; it previously followed the [[example]] tables, where TOML
+# assigned it to the last example and nothing was excluded.
+exclude = [
+    "src/endf_8_openmc_depletion_data/chain_endfb80_pwr.xml",
+    "src/endf_8_openmc_depletion_data/chain_endfb80_sfr.xml",
+]
 
 [dependencies]
-uom = "0.37.0"
+uom = "0.38"
 strum = "0.26"
 strum_macros = "0.26"
 
@@ -26,8 +34,3 @@ name = "serde_experiment"
 
 [[example]]
 name = "serde_chatgpt_5"
-
-exclude = [
-    "src/endf_8_openmc_depletion_data/chain_endfb80_pwr.xml",
-    "src/endf_8_openmc_depletion_data/chain_endfb80_sfr.xml",
-]
