@@ -75,6 +75,15 @@
 //! However, it does have decay chains which may be useful
 
 
+#![no_std]
+
+extern crate alloc;
+
+// Tests run on the host and may use std (vec!, dbg!, println!).
+#[cfg(test)]
+#[macro_use]
+extern crate std;
+
 #[warn(missing_docs)]
 
 /// provides endf 8 parent independent fission yields,

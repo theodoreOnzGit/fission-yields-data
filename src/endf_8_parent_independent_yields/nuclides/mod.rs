@@ -1,3 +1,5 @@
+use alloc::vec;
+use alloc::vec::Vec;
 use crate::prelude::fission_yield_linear_interpolation;
 use strum_macros::EnumString;
 use uom::si::{f64::*, ratio::ratio};

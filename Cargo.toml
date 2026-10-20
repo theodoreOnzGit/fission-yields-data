@@ -19,8 +19,11 @@ exclude = [
 ]
 
 [dependencies]
-uom = "0.38"
-strum = "0.26"
+# no_std + alloc (2026-10-20). uom without its `std` feature, so a consumer
+# that wants a no_std uom is not forced back onto std through this crate
+# (Cargo unifies features across the whole build). strum likewise.
+uom = { version = "0.38", default-features = false, features = ["autoconvert", "f64", "si"] }
+strum = { version = "0.26", default-features = false }
 strum_macros = "0.26"
 
 [dev-dependencies]

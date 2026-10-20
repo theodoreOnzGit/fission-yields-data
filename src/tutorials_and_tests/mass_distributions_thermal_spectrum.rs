@@ -1,3 +1,4 @@
+use alloc::vec::Vec;
 use uom::si::{energy::electronvolt, f64::Energy};
 
 use crate::endf_8_parent_independent_yields::nuclides::Nuclide;

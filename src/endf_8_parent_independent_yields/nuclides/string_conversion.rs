@@ -1,7 +1,7 @@
 // this part is vibe coded to deal with boilerplate
 //
 
-use std::str::FromStr;
+use core::str::FromStr;
 
 use super::Nuclide;
 
