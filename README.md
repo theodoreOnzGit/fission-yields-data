@@ -1,6 +1,12 @@
 # fission-yields-data
 Fission Yields for various nuclides using ENDF or other library data
 
+**`no_std` + `alloc` since v0.1.6.** The crate needs only `core` and `alloc`
+(the mass distributions return a `Vec`), with `uom` and `strum` built without
+their `std` features, so it runs on embedded, wasm and other targets without a
+standard library. Checked by building for `thumbv7em-none-eabi`, a target with
+no `std` at all.
+
 
 # nuclides completed 
 

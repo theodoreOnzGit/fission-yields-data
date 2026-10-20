@@ -1,3 +1,4 @@
+use std::{vec, vec::Vec};
 use crate::prelude::Nuclide;
 
 #[test]

@@ -73,6 +73,13 @@
 //! https://crates.io/crates/Nuclide
 //!
 //! However, it does have decay chains which may be useful
+#![no_std]
+// no_std + alloc (v0.1.6): the yield tables are plain data and the mass
+// distributions return a `Vec`, so `alloc` is all the crate needs. Tests use
+// `std` for the test harness only.
+extern crate alloc;
+#[cfg(test)]
+extern crate std;
 
 
 #[warn(missing_docs)]

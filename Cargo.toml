@@ -1,10 +1,10 @@
 [package]
 name = "fission-yields-data"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2024"
 
 license = "GPL-3.0"
-description = "Fission Yield Data for some nuclides"
+description = "Fission Yield Data for some nuclides (ENDF/B-VIII.0 parent-independent yields); no_std + alloc"
 homepage = "https://github.com/theodoreOnzGit/fission-yields-data"
 repository ="https://github.com/theodoreOnzGit/fission-yields-data"
 readme = "README.md"
@@ -19,8 +19,9 @@ exclude = [
 ]
 
 [dependencies]
-uom = "0.38"
-strum = "0.26"
+# no_std + alloc since v0.1.6: uom and strum without their `std` defaults.
+uom = { version = "0.38", default-features = false, features = ["autoconvert", "f32", "f64", "si"] }
+strum = { version = "0.26", default-features = false }
 strum_macros = "0.26"
 
 [dev-dependencies]
